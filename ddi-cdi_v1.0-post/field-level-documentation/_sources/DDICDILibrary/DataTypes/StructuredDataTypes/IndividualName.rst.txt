@@ -181,6 +181,11 @@ Definition
                :emphasize-lines: 1
                :dedent: 2
 
+         .. tab-item:: JSON Schema
+            :class-content: encoding
+
+            `JSON Schema </encoding/json-schema/ddi-cdi.schema.json>`_
+
          .. tab-item:: Ontology (Turtle)
             :class-content: encoding
 
@@ -200,4 +205,14 @@ Definition
                :language: jsonld
                :linenos:
                :emphasize-lines: 5
+
+         .. tab-item:: SHACL
+            :class-content: encoding
+
+            `SHACL - Shapes Constraint Language </encoding/shacl/ddi-cdi.shacl.ttl>`_
+
+         .. tab-item:: ShEx
+            :class-content: encoding
+
+            `ShEx - Shape Expressions </encoding/shex/ddi-cdi.shexc>`_
 
