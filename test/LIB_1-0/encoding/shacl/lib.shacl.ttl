@@ -1,0 +1,613 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc:    <http://purl.org/dc/elements/1.1/>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX lib:   <http://library/RDF/>
+PREFIX ucmis: <http://ddialliance.org/Specification/UCMIS/1.0/RDF>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+# class Account
+# based on the UML class LibraryDomainModel::Classes::Account
+<#Account> a sh:NodeShape;
+    sh:targetClass lib:Account;
+	sh:message "See http://library/RDF/Account";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:Account
+			 ) ;
+    ];
+    # attributes
+    sh:property <#Account-number>;
+    sh:property <#Account-openingDate>;
+    sh:property <#Account-state>;
+    # associations from Account
+    sh:property <#Account_account_Patron>;
+    sh:property <#Account_accounts_Library>;
+    sh:property <#Account_borrowed_BookItem>;
+    # associations to Account
+
+
+
+.
+
+<#Account-number> a sh:PropertyShape ;
+    sh:path lib:Account-number;
+    sh:datatype xsd:integer;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Account-openingDate> a sh:PropertyShape ;
+    sh:path lib:Account-openingDate;
+    sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:Date
+      
+    ) ]];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Account-state> a sh:PropertyShape ;
+    sh:path lib:Account-state;
+    sh:node <#AccountState>
+    ;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+<#Account_account_Patron> a sh:PropertyShape ;
+    sh:path lib:Account_account_Patron;
+	sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:Patron
+      
+    ) ]];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#rev_Account_account_Patron> a sh:PropertyShape ;
+    sh:path [ sh:inversePath lib:Account_account_Patron ];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Account_accounts_Library> a sh:PropertyShape ;
+    sh:path lib:Account_accounts_Library;
+	sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:Library
+      
+    ) ]];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#rev_Account_accounts_Library> a sh:PropertyShape ;
+    sh:path [ sh:inversePath lib:Account_accounts_Library ];
+    sh:minCount 1;
+.
+<#Account_borrowed_BookItem> a sh:PropertyShape ;
+    sh:path lib:Account_borrowed_BookItem;
+	sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:BookItem
+      
+    ) ]];
+    sh:maxCount 12;
+.
+<#rev_Account_borrowed_BookItem> a sh:PropertyShape ;
+    sh:path [ sh:inversePath lib:Account_borrowed_BookItem ];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+# class Author
+# based on the UML class LibraryDomainModel::Classes::Author
+<#Author> a sh:NodeShape;
+    sh:targetClass lib:Author;
+	sh:message "See http://library/RDF/Author";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:Author
+			 ) ;
+    ];
+    # attributes
+    sh:property <#Author-birthYear>;
+    sh:property <#Author-name>;
+    # associations from Author
+    sh:property <#Author_wrote_Book>;
+    # associations to Author
+
+
+
+.
+
+<#Author-birthYear> a sh:PropertyShape ;
+    sh:path lib:Author-birthYear;
+    sh:datatype xsd:integer;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Author-name> a sh:PropertyShape ;
+    sh:path lib:Author-name;
+    sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:FullName
+      
+    ) ]];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+<#Author_wrote_Book> a sh:PropertyShape ;
+    sh:path lib:Author_wrote_Book;
+	sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:Book
+        lib:BookItem
+      
+    ) ]];
+    sh:minCount 1;
+.
+<#rev_Author_wrote_Book> a sh:PropertyShape ;
+    sh:path [ sh:inversePath lib:Author_wrote_Book ];
+    sh:minCount 1;
+.
+
+# class Book
+# based on the UML class LibraryDomainModel::Classes::Book
+<#Book> a sh:NodeShape;
+    sh:targetClass lib:Book;
+	sh:message "See http://library/RDF/Book";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:Book
+			  lib:BookItem
+			 ) ;
+    ];
+    # attributes
+    sh:property <#Book-isbn>;
+    sh:property <#Book-language>;
+    sh:property <#Book-publicationYear>;
+    sh:property <#Book-publisher>;
+    sh:property <#Book-subject>;
+    sh:property <#Book-title>;
+    # associations from Book
+    # associations to Book
+    sh:property <#rev_Author_wrote_Book>;
+
+
+
+.
+
+<#Book-isbn> a sh:PropertyShape ;
+    sh:path lib:Book-isbn;
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+.
+<#Book-language> a sh:PropertyShape ;
+    sh:path lib:Book-language;
+    sh:node <#Language>
+    ;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Book-publicationYear> a sh:PropertyShape ;
+    sh:path lib:Book-publicationYear;
+    sh:datatype xsd:integer;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Book-publisher> a sh:PropertyShape ;
+    sh:path lib:Book-publisher;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Book-subject> a sh:PropertyShape ;
+    sh:path lib:Book-subject;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Book-title> a sh:PropertyShape ;
+    sh:path lib:Book-title;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+
+# class BookItem
+# based on the UML class LibraryDomainModel::Classes::BookItem
+<#BookItem> a sh:NodeShape;
+    sh:targetClass lib:BookItem;
+	sh:message "See http://library/RDF/BookItem";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:BookItem
+			 ) ;
+    ];
+    # attributes
+    sh:property <#BookItem-barcode>;
+    sh:property <#BookItem-borrowed>;
+    sh:property <#BookItem-format>;
+    # associations from BookItem
+    # associations to BookItem
+    sh:property <#rev_Account_borrowed_BookItem>;
+    sh:property <#rev_Catalog_records_BookItem>;
+
+    # ---- superclass: Book
+    # attributes
+    sh:property <#Book-isbn>;
+    sh:property <#Book-language>;
+    sh:property <#Book-publicationYear>;
+    sh:property <#Book-publisher>;
+    sh:property <#Book-subject>;
+    sh:property <#Book-title>;
+    # associations from Book
+    # associations to Book
+    sh:property <#rev_Author_wrote_Book>;
+
+
+
+
+
+.
+
+<#BookItem-barcode> a sh:PropertyShape ;
+    sh:path lib:BookItem-barcode;
+    sh:datatype xsd:string;
+    sh:maxCount 1;
+.
+<#BookItem-borrowed> a sh:PropertyShape ;
+    sh:path lib:BookItem-borrowed;
+    sh:datatype xsd:integer;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#BookItem-format> a sh:PropertyShape ;
+    sh:path lib:BookItem-format;
+    sh:node <#Format>
+    ;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+
+# class Catalog
+# based on the UML class LibraryDomainModel::Classes::Catalog
+<#Catalog> a sh:NodeShape;
+    sh:targetClass lib:Catalog;
+	sh:message "See http://library/RDF/Catalog";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:Catalog
+			 ) ;
+    ];
+    # attributes
+    # associations from Catalog
+    sh:property <#Catalog_catalogues_Library>;
+    sh:property <#Catalog_records_BookItem>;
+    # associations to Catalog
+
+
+
+.
+
+
+<#Catalog_catalogues_Library> a sh:PropertyShape ;
+    sh:path lib:Catalog_catalogues_Library;
+	sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:Library
+      
+    ) ]];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#rev_Catalog_catalogues_Library> a sh:PropertyShape ;
+    sh:path [ sh:inversePath lib:Catalog_catalogues_Library ];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Catalog_records_BookItem> a sh:PropertyShape ;
+    sh:path lib:Catalog_records_BookItem;
+	sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:BookItem
+      
+    ) ]];
+    sh:minCount 1;
+.
+<#rev_Catalog_records_BookItem> a sh:PropertyShape ;
+    sh:path [ sh:inversePath lib:Catalog_records_BookItem ];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+# class Library
+# based on the UML class LibraryDomainModel::Classes::Library
+<#Library> a sh:NodeShape;
+    sh:targetClass lib:Library;
+	sh:message "See http://library/RDF/Library";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:Library
+			 ) ;
+    ];
+    # attributes
+    sh:property <#Library-address>;
+    sh:property <#Library-name>;
+    # associations from Library
+    # associations to Library
+    sh:property <#rev_Account_accounts_Library>;
+    sh:property <#rev_Catalog_catalogues_Library>;
+
+
+
+.
+
+<#Library-address> a sh:PropertyShape ;
+    sh:path lib:Library-address;
+    sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:Address
+      
+    ) ]];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Library-name> a sh:PropertyShape ;
+    sh:path lib:Library-name;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+
+# class Patron
+# based on the UML class LibraryDomainModel::Classes::Patron
+<#Patron> a sh:NodeShape;
+    sh:targetClass lib:Patron;
+	sh:message "See http://library/RDF/Patron";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:Patron
+			 ) ;
+    ];
+    # attributes
+    sh:property <#Patron-address>;
+    sh:property <#Patron-name>;
+    # associations from Patron
+    # associations to Patron
+    sh:property <#rev_Account_account_Patron>;
+
+
+
+.
+
+<#Patron-address> a sh:PropertyShape ;
+    sh:path lib:Patron-address;
+    sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:Address
+      
+    ) ]];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Patron-name> a sh:PropertyShape ;
+    sh:path lib:Patron-name;
+    sh:node [ sh:property [ sh:path rdf:type; sh:minCount 1; sh:in (
+        lib:FullName
+      
+    ) ]];
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+
+# datatype AccountState
+# based on the UML data type LibraryDomainModel::DataTypes::Enumerations::AccountState
+<#AccountState> a sh:NodeShape;
+    sh:in ( lib:Active lib:Closed lib:Frozen  );
+    # attributes
+
+
+
+.
+
+
+# datatype Address
+# based on the UML data type LibraryDomainModel::DataTypes::StructuredDataTypes::Address
+<#Address> a sh:NodeShape;
+    sh:targetClass lib:Address;
+	sh:message "See http://library/RDF/Address";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:Address
+			 ) ;
+    ];
+    # attributes
+    sh:property <#Address-City>;
+    sh:property <#Address-Country>;
+    sh:property <#Address-Street>;
+    sh:property <#Address-StreetNumber>;
+    sh:property <#Address-ZIPCode>;
+
+
+
+.
+
+<#Address-City> a sh:PropertyShape ;
+    sh:path lib:Address-City;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Address-Country> a sh:PropertyShape ;
+    sh:path lib:Address-Country;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Address-Street> a sh:PropertyShape ;
+    sh:path lib:Address-Street;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Address-StreetNumber> a sh:PropertyShape ;
+    sh:path lib:Address-StreetNumber;
+    sh:datatype xsd:integer;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#Address-ZIPCode> a sh:PropertyShape ;
+    sh:path lib:Address-ZIPCode;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+# datatype Date
+# based on the UML data type LibraryDomainModel::DataTypes::StructuredDataTypes::Date
+<#Date> a sh:NodeShape;
+    sh:targetClass lib:Date;
+	sh:message "See http://library/RDF/Date";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:Date
+			 ) ;
+    ];
+    # attributes
+
+
+
+.
+
+
+# datatype Format
+# based on the UML data type LibraryDomainModel::DataTypes::Enumerations::Format
+<#Format> a sh:NodeShape;
+    sh:in ( lib:Audiobook lib:AudioCD lib:Hardcover lib:MP3CD lib:Paperback lib:PDF  );
+    # attributes
+
+
+
+.
+
+
+# datatype FullName
+# based on the UML data type LibraryDomainModel::DataTypes::StructuredDataTypes::FullName
+<#FullName> a sh:NodeShape;
+    sh:targetClass lib:FullName;
+	sh:message "See http://library/RDF/FullName";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:FullName
+			 ) ;
+    ];
+    # attributes
+    sh:property <#FullName-firstName>;
+    sh:property <#FullName-lastName>;
+    sh:property <#FullName-middleName>;
+
+
+
+.
+
+<#FullName-firstName> a sh:PropertyShape ;
+    sh:path lib:FullName-firstName;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#FullName-lastName> a sh:PropertyShape ;
+    sh:path lib:FullName-lastName;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#FullName-middleName> a sh:PropertyShape ;
+    sh:path lib:FullName-middleName;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+
+# datatype Language
+# based on the UML data type LibraryDomainModel::DataTypes::Enumerations::Language
+<#Language> a sh:NodeShape;
+    sh:in ( lib:English lib:French lib:German lib:Italian lib:Spanish  );
+    # attributes
+
+
+
+.
+
+
+# datatype ModelIdentification
+# based on the UML data type LibraryDomainModel::DataTypes::ModelIdentification
+<#ModelIdentification> a sh:NodeShape;
+    sh:targetClass lib:ModelIdentification;
+	sh:message "See http://library/RDF/ModelIdentification";
+	sh:closed true;
+	sh:ignoredProperties ( owl:sameAs );
+    sh:property [
+			sh:path rdf:type;
+			sh:in (   lib:ModelIdentification
+			 ) ;
+    ];
+    # attributes
+    sh:property <#ModelIdentification-acronym>;
+    sh:property <#ModelIdentification-majorVersion>;
+    sh:property <#ModelIdentification-minorVersion>;
+    sh:property <#ModelIdentification-title>;
+    sh:property <#ModelIdentification-uri>;
+
+
+
+.
+
+<#ModelIdentification-acronym> a sh:PropertyShape ;
+    sh:path lib:ModelIdentification-acronym;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#ModelIdentification-majorVersion> a sh:PropertyShape ;
+    sh:path lib:ModelIdentification-majorVersion;
+    sh:datatype xsd:integer;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#ModelIdentification-minorVersion> a sh:PropertyShape ;
+    sh:path lib:ModelIdentification-minorVersion;
+    sh:datatype xsd:integer;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#ModelIdentification-title> a sh:PropertyShape ;
+    sh:path lib:ModelIdentification-title;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#ModelIdentification-uri> a sh:PropertyShape ;
+    sh:path lib:ModelIdentification-uri;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+

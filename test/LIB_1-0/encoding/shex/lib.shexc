@@ -1,0 +1,129 @@
+PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:   <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc:    <http://purl.org/dc/elements/1.1/>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX lib:   <http://library/RDF/>
+PREFIX ucmis: <http://ddialliance.org/Specification/UCMIS/1.0/RDF>
+
+start = @http://library/RDF/:WideDataSetShape
+
+# class Account
+# based on the UML class LibraryDomainModel::Classes::Account
+lib:AccountShape CLOSED {
+	a [lib:Account];
+	lib:Account-number	xsd:integer;
+	lib:Account-openingDate	@lib:DateShape;
+	lib:Account-state	@lib:AccountStateShape;
+	lib:Account_account_Patron	@lib:PatronShape ;
+	
+	lib:Account_accounts_Library	@lib:LibraryShape ;
+	
+	lib:Account_borrowed_BookItem	@lib:BookItemShape ;
+	
+	}
+
+# class Author
+# based on the UML class LibraryDomainModel::Classes::Author
+lib:AuthorShape CLOSED {
+	a [lib:Author];
+	lib:Author-birthYear	xsd:integer;
+	lib:Author-name	@lib:FullNameShape;
+	lib:Author_wrote_Book	@lib:BookShape OR @lib:BookItemShape+;
+	
+	}
+
+# class Book
+# based on the UML class LibraryDomainModel::Classes::Book
+lib:BookShape CLOSED {
+	a [lib:Book];
+	$lib:BookProperties (
+	lib:Book-isbn	xsd:string?;
+	lib:Book-language	@lib:LanguageShape;
+	lib:Book-publicationYear	xsd:integer;
+	lib:Book-publisher	xsd:string;
+	lib:Book-subject	xsd:string;
+	lib:Book-title	xsd:string;
+	^lib:Author_wrote_Book @lib:AuthorShape +;
+		);
+}
+
+# class BookItem
+# based on the UML class LibraryDomainModel::Classes::BookItem
+lib:BookItemShape CLOSED {
+	a [lib:BookItem];
+	lib:BookItem-barcode	xsd:string?;
+	lib:BookItem-borrowed	xsd:integer;
+	lib:BookItem-format	@lib:FormatShape;
+	^lib:Account_borrowed_BookItem @lib:AccountShape ;
+	^lib:Catalog_records_BookItem @lib:CatalogShape ;
+		&lib:BookProperties;
+	}
+
+# class Catalog
+# based on the UML class LibraryDomainModel::Classes::Catalog
+lib:CatalogShape CLOSED {
+	a [lib:Catalog];
+	lib:Catalog_catalogues_Library	@lib:LibraryShape ;
+	
+	lib:Catalog_records_BookItem	@lib:BookItemShape +;
+	
+	}
+
+# class Library
+# based on the UML class LibraryDomainModel::Classes::Library
+lib:LibraryShape CLOSED {
+	a [lib:Library];
+	lib:Library-address	@lib:AddressShape;
+	lib:Library-name	xsd:string;
+	^lib:Account_accounts_Library @lib:AccountShape +;
+	^lib:Catalog_catalogues_Library @lib:CatalogShape ;
+	}
+
+# class Patron
+# based on the UML class LibraryDomainModel::Classes::Patron
+lib:PatronShape CLOSED {
+	a [lib:Patron];
+	lib:Patron-address	@lib:AddressShape;
+	lib:Patron-name	@lib:FullNameShape;
+	^lib:Account_account_Patron @lib:AccountShape ;
+	}
+
+# datatype Address
+# based on the UML data type LibraryDomainModel::DataTypes::StructuredDataTypes::Address
+lib:AddressShape CLOSED {
+	a [lib:Address];
+	lib:Address-City	xsd:string;
+	lib:Address-Country	xsd:string;
+	lib:Address-Street	xsd:string;
+	lib:Address-StreetNumber	xsd:integer;
+	lib:Address-ZIPCode	xsd:string;
+	}
+
+# datatype Date
+# based on the UML data type LibraryDomainModel::DataTypes::StructuredDataTypes::Date
+lib:DateShape CLOSED {
+	a [lib:Date];
+	}
+
+# datatype FullName
+# based on the UML data type LibraryDomainModel::DataTypes::StructuredDataTypes::FullName
+lib:FullNameShape CLOSED {
+	a [lib:FullName];
+	lib:FullName-firstName	xsd:string;
+	lib:FullName-lastName	xsd:string;
+	lib:FullName-middleName	xsd:string;
+	}
+
+# datatype ModelIdentification
+# based on the UML data type LibraryDomainModel::DataTypes::ModelIdentification
+lib:ModelIdentificationShape CLOSED {
+	a [lib:ModelIdentification];
+	lib:ModelIdentification-acronym	xsd:string;
+	lib:ModelIdentification-majorVersion	xsd:integer;
+	lib:ModelIdentification-minorVersion	xsd:integer;
+	lib:ModelIdentification-title	xsd:string;
+	lib:ModelIdentification-uri	xsd:string;
+	}
+

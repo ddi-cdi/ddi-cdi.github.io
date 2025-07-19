@@ -1,0 +1,58 @@
+/* remove light/dark button */
+button.theme-switch-button {
+    display: none !important;
+}
+/* adjust size of plantuml diagram */
+p.plantuml>object {
+	max-width: 100% !important;
+	height: auto !important;
+}
+/* horizontal scroll for wide tables in dropboxes */
+.sd-summary-content {
+	overflow: auto;
+}
+/*
+Horizontal spacing, see:
+https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/layout.html#horizontal-spacing
+*/
+/*
+Enable full width for content in combination with configuration
+in conf.py: 'secondary_sidebar_items': []
+Separate rules required.
+*/
+.bd-main .bd-content .bd-article-container {
+	max-width: 100%;  /* default is 60em */
+	width: 4000px; /* force to max-width */
+}
+.bd-page-width {
+    max-width: 100%;  /* default is 88rem */
+	width: 4000px; /* force to max-width */
+}
+/* without this, the icon can show up while resizing the window */
+label.secondary-toggle {
+	display: none;
+}
+/* adjust navigation bar with contents */
+.sidebar-primary-item {
+	font-size: 80%;
+}
+.sidebar-primary-item>h3 {
+	font-size: 150%;
+}
+.bd-sidebar-primary {
+	background-color: #f3f4f5; /* same grey as the dropdown bar */
+}
+/* adjustment for breadcrumbs */
+.hai-breadcrumbs {
+	padding-bottom: 0.1em;
+}
+ul.bd-breadcrumbs {
+	padding-top: 1.3em;
+}
+/* adjustment for main content */
+article.bd-article {
+  border-style: solid none none none;
+  border-color: #f3f4f5;
+  padding: 0.2em 0.2em 0.2em 0.2em;
+}
+

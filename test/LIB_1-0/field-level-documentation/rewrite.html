@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body onload="redirect()">
+    <script>
+      var mappingTable = {
+        "Account": "Classes/Account.html",
+        "Author": "Classes/Author.html",
+        "Book": "Classes/Book.html",
+        "BookItem": "Classes/BookItem.html",
+        "Catalog": "Classes/Catalog.html",
+        "Library": "Classes/Library.html",
+        "Patron": "Classes/Patron.html",
+        "AccountState": "DataTypes/Enumerations/AccountState.html",
+        "Address": "DataTypes/StructuredDataTypes/Address.html",
+        "Date": "DataTypes/StructuredDataTypes/Date.html",
+        "Format": "DataTypes/Enumerations/Format.html",
+        "FullName": "DataTypes/StructuredDataTypes/FullName.html",
+        "Language": "DataTypes/Enumerations/Language.html",
+        "ModelIdentification": "DataTypes/ModelIdentification.html",
+      }
+      function redirect() {
+        pathname = window.location.pathname;
+        lastSlashPosition = pathname.lastIndexOf('/');
+        documentationRoot = pathname.substring(0, lastSlashPosition+1);
+        if (window.location.hash) {
+	      var fragmentIdentifier = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+	      window.location.replace(documentationRoot+mappingTable[[fragmentIdentifier]]);
+        } else {
+          window.location.replace(documentationRoot);
+        }
+      }
+    </script>
+  </body>
+</html>
