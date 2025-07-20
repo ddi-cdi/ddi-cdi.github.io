@@ -32,22 +32,13 @@ Separate rules required.
 label.secondary-toggle {
 	display: none;
 }
-/* adjust navigation bar with contents */
-.sidebar-primary-item {
-	font-size: 80%;
-}
-.sidebar-primary-item>h3 {
-	font-size: 150%;
-}
-.bd-sidebar-primary {
-	background-color: #f3f4f5; /* same grey as the dropdown bar */
-}
 /* adjustment for breadcrumbs */
-.hai-breadcrumbs {
-	padding-bottom: 0.1em;
-}
 ul.bd-breadcrumbs {
-	padding-top: 1.3em;
+	padding-top: 1rem;
+	padding-left: 1.5rem;
+}
+div.bd-header-article{
+	height: 1.8rem;
 }
 /* adjustment for main content */
 article.bd-article {
@@ -55,4 +46,36 @@ article.bd-article {
   border-color: #f3f4f5;
   padding: 0.2em 0.2em 0.2em 0.2em;
 }
-
+/* search button on the top right shows only up in narrow windows */
+/*
+@media (min-width: 992px) {
+  .search-button {
+    display: none !important;
+  }
+}
+*/
+/* adjust navigation bar with contents */
+.sidebar-primary-item {
+	font-size: 0.8rem;
+}
+.sidebar-primary-item>h3 {
+	font-size: 1rem;
+}
+.bd-sidebar-primary {
+	background-color: #f3f4f5; /* same grey as the dropdown bar */
+}
+div.sidebar-primary-item {
+	padding: 0.3rem !important;
+}
+img.logo__image {
+	width: 70%;
+}
+p.logo__title {
+	font-size: 0.9rem !important;
+}
+div.sidebar-primary-item>h3 {
+	margin-top: 0.5rem;
+}
+div.sidebar-primary-item ul {
+	margin-left: -1rem;
+}

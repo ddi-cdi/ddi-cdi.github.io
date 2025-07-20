@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=72f9fe4a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=cb098a9c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -40,7 +40,7 @@
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
   <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=2b91c5f0"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=351a2e83"></script>
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -48,17 +48,42 @@
     <script src="../../../_static/jquery.js?v=5d32c60e"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../../_static/modelUrl.js?v=c7c3571b"></script>
-    <script src="../../../_static/custom.js?v=6fa11a76"></script>
-    <script src="../../../_static/modelDefinition.js?v=897f6d42"></script>
+    <script src="../../../_static/custom.js?v=ce0dd7b6"></script>
+    <script src="../../../_static/_modelDefinition.js?v=897f6d42"></script>
+    <script src="../../../_static/_modelUrl.js?v=c7c3571b"></script>
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'DDICDILibrary/Classes/Conceptual/VariableCollection';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="VariablePosition" href="VariablePosition.html" />
-    <link rel="prev" title="Universe" href="Universe.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="prev" title="Universe" href="Universe.html" /> 
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.datatables.net/ https://code.jquery.com/ https://d3js.org/d3.v4.min.js https://cdn.jsdelivr.net/; style-src 'self' 'unsafe-inline' https://cdn.datatables.net/ https://code.jquery.com/; img-src 'self' https://cdn.datatables.net/;">
+    <!-- loaded before custom.js required. Done now with sphinxcontrib-jquery. See example Agent.html.
+    <script
+              src="https://code.jquery.com/jquery-3.7.1.min.js"
+              integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+              crossorigin="anonymous"></script>
+    -->
+    <script
+              src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+              integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+              crossorigin="anonymous"></script>
+	<!--
+		Combined css and js downloads created with https://datatables.net/download/.
+		DataTables, Buttons (HTML5 export, JSZip, Print view), Search panes, Select, Minify, Concatenate
+	-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-html5-1.7.0/b-print-1.7.0/sp-1.2.2/sl-1.3.3/datatables.min.css"/>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.24/b-1.7.0/b-html5-1.7.0/b-print-1.7.0/sp-1.2.2/sl-1.3.3/datatables.min.js"></script>
+	<!-- For jquery tooltip. See: https://jqueryui.com/tooltip/ -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<!--     <script src="https://d3js.org/d3.v4.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.2/dist/svg-pan-zoom.min.js"></script>
+    <!--
+    already loaded by sphinx
+	<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript" language="javascript"></script>
+	-->
+
   </head>
   
   
@@ -132,7 +157,7 @@
 
    
 
-<a class="navbar-brand logo" href="https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html">
+<a class="navbar-brand logo" href="http://ddialliance.org/Specification/DDI-CDI/1.0/">
   
   
   
@@ -143,11 +168,30 @@
       
     
     
-    <img src="../../../_static/cdi.svg" class="logo__image only-light" alt="UML Model: DDI Cross Domain Integration (DDI-CDI 1.0) - Home"/>
-    <script>document.write(`<img src="../../../_static/cdi.svg" class="logo__image only-dark" alt="UML Model: DDI Cross Domain Integration (DDI-CDI 1.0) - Home"/>`);</script>
+    <img src="../../../_static/cdi.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../../_static/cdi.svg" class="logo__image only-dark" alt=""/>`);</script>
   
+  
+    <p class="title logo__title">DDI Cross Domain Integration</p>
   
 </a></div>
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
         <div class="sidebar-primary-item">
 <h3><a href="../../../index.html">Table of Contents</a></h3>
 <ul class="current">
@@ -223,17 +267,15 @@
             <div class="bd-article-container">
               
               <div class="bd-header-article">
-
-
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
         <div class="header-article-item">
-            <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-bs-placement="bottom" data-bs-toggle="tooltip" aria-label="Toggle primary sidebar" data-bs-original-title="Toggle primary sidebar">
-                <svg class="svg-inline--fa fa-bars" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"></path></svg><!-- <span class="fa-solid fa-bars"></span> Font Awesome fontawesome.com -->
-            </label>
-        </div>
-        <div class="header-article-item hai-breadcrumbs">&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 
@@ -260,6 +302,7 @@
   </ul>
 </nav>
 </div>
+      
     </div>
   
   
@@ -415,8 +458,23 @@ Diagram<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="plantuml">
-<object data="../../../_images/plantuml-9f919d61402a7c98365bc63de9bf268b82f03b06.svg" type="image/svg+xml" style="width:816px;height:629px;background:#FFFFFF;"></object></p>
-</div>
+<object data="../../../_images/plantuml-fcf5e002e70d81132a02b006f146413707ce9909.svg" type="image/svg+xml" style="width:1814px;height:1398px;background:#FFFFFF;"></object></p>
+<script>
+  // Don't use window.onLoad like this in production, because it can only listen to one function.
+  window.onload = function() {
+    var panZoom = window.panZoom = svgPanZoom('object', {
+      zoomEnabled: true,
+      controlIconsEnabled: true,
+      fit: 1,
+      center: 1
+    });
+    $(window).resize(function(){
+      panZoom.resize();
+      panZoom.fit();
+      panZoom.center();
+    })
+  };
+</script></div>
 </details></div>
 <div class="docutils container" id="attributes">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -1330,7 +1388,7 @@ JSON-LD</label><div class="sd-tab-content encoding docutils">
 <span class="linenos">62</span><span class="w">      </span><span class="nt">&quot; comment &quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tag:json-should-support-trailing-commas&quot;</span>
 <span class="linenos">63</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">64</span><span class="w">  </span><span class="p">],</span>
-<span class="linenos">65</span><span class="w">  </span><span class="nt">&quot;generatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This code was generated by the Eclipse Acceleo project UCMIS M2T on 2025-07-18 21:25:15.&quot;</span><span class="p">,</span>
+<span class="linenos">65</span><span class="w">  </span><span class="nt">&quot;generatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This code was generated by the Eclipse Acceleo project UCMIS M2T on 2025-07-20 17:42:31.&quot;</span><span class="p">,</span>
 <span class="linenos">66</span><span class="w">  </span><span class="nt">&quot;basedOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;based on the UML data type DDICDIModels::DDICDILibrary::Classes::Conceptual::VariableCollection&quot;</span>
 <span class="linenos">67</span><span class="p">}</span>
 </pre></div>

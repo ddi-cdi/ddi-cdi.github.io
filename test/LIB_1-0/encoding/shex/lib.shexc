@@ -121,6 +121,7 @@ lib:FullNameShape CLOSED {
 lib:ModelIdentificationShape CLOSED {
 	a [lib:ModelIdentification];
 	lib:ModelIdentification-acronym	xsd:string;
+	lib:ModelIdentification-language	xsd:string;
 	lib:ModelIdentification-majorVersion	xsd:integer;
 	lib:ModelIdentification-minorVersion	xsd:integer;
 	lib:ModelIdentification-title	xsd:string;

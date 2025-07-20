@@ -21,7 +21,10 @@ For Eclipse:
                     xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#LibraryDomainModel-ownedComment"
                     xmi:type="uml:Comment">
          <annotatedElement xmi:idref="LibraryDomainModel"/>
-         <body>The Library Domain Model is an example for using UCMIS.
+         <body>Library Domain Model
+====================
+
+The Library Domain Model is an example for using UCMIS.
 
 See: https://bitbucket.org/ddi-alliance/ucmis/</body>
       </ownedComment>
@@ -658,6 +661,29 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <type href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String"
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
+            <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-language"
+                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-language"
+                            xmi:type="uml:Property">
+               <lowerValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-language-lowerValue"
+                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-language-lowerValue"
+                           xmi:type="uml:LiteralInteger">
+                  <value>1</value>
+               </lowerValue>
+               <upperValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-language-upperValue"
+                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-language-upperValue"
+                           xmi:type="uml:LiteralUnlimitedNatural">
+                  <value>1</value>
+               </upperValue>
+               <name>language</name>
+               <defaultValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-language-defaultValue"
+                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-language-defaultValue"
+                             xmi:type="uml:LiteralString">
+                  <value>en</value>
+               </defaultValue>
+               <isReadOnly>true</isReadOnly>
+               <type href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String"
+                     xmi:type="uml:PrimitiveType"/>
+            </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-majorVersion"
                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-majorVersion"
                             xmi:type="uml:Property">
@@ -700,6 +726,7 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                              xmi:type="uml:LiteralInteger">
                   <value>0</value>
                </defaultValue>
+               <isReadOnly>true</isReadOnly>
                <type href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#Integer"
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
@@ -745,6 +772,7 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                              xmi:type="uml:LiteralString">
                   <value>https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html</value>
                </defaultValue>
+               <isReadOnly>true</isReadOnly>
                <type href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#String"
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>

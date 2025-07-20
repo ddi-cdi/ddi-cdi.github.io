@@ -571,6 +571,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     ];
     # attributes
     sh:property <#ModelIdentification-acronym>;
+    sh:property <#ModelIdentification-language>;
     sh:property <#ModelIdentification-majorVersion>;
     sh:property <#ModelIdentification-minorVersion>;
     sh:property <#ModelIdentification-title>;
@@ -582,6 +583,12 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 
 <#ModelIdentification-acronym> a sh:PropertyShape ;
     sh:path lib:ModelIdentification-acronym;
+    sh:datatype xsd:string;
+    sh:minCount 1;
+    sh:maxCount 1;
+.
+<#ModelIdentification-language> a sh:PropertyShape ;
+    sh:path lib:ModelIdentification-language;
     sh:datatype xsd:string;
     sh:minCount 1;
     sh:maxCount 1;

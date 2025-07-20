@@ -35,16 +35,18 @@ $(document).ready(function() {
 		term = $(this).text().replace(/[^:]+::/, '');
 		tooltip = definition[term];
 		if (tooltip === undefined) {
-			console.log( term );
+			$(this).attr('title', '');
+//			console.log( term );
 		} else {
 			$(this).attr('title', ' \n' + tooltip);
 		}
 	});
 
 	// jquery tooltip can be styled. see: https://jqueryui.com/tooltip/
-	$( function() {
-		$( document ).tooltip();
-	} );
+// error: can't convert undefined to object ??
+//	$( function() {
+//		$( document ).tooltip();
+//	} );
   
     $('table.datatable-basic').DataTable({
         "info": false,
