@@ -8,8 +8,8 @@ p.plantuml>object {
 	height: auto !important;
 }
 /* horizontal scroll for wide tables in dropboxes */
-.sd-summary-content {
-	overflow: auto;
+div.sd-summary-content {
+	overflow-x: auto;
 }
 /*
 Horizontal spacing, see:
@@ -38,13 +38,14 @@ ul.bd-breadcrumbs {
 	padding-left: 1.5rem;
 }
 div.bd-header-article{
-	height: 1.8rem;
+	height: 2.4rem;
 }
 /* adjustment for main content */
 article.bd-article {
   border-style: solid none none none;
   border-color: #f3f4f5;
   padding: 0.2em 0.2em 0.2em 0.2em;
+  font-size: 80%;
 }
 /* search button on the top right shows only up in narrow windows */
 /*
@@ -55,17 +56,16 @@ article.bd-article {
 }
 */
 /* adjust navigation bar with contents */
-.sidebar-primary-item {
-	font-size: 0.8rem;
+div.sidebar-primary-item {
+	font-size: 0.7rem;
+	padding: 0.3rem !important;
 }
 .sidebar-primary-item>h3 {
-	font-size: 1rem;
+	font-size: 0.9rem;
+	margin-top: 0.5rem;
 }
 .bd-sidebar-primary {
 	background-color: #f3f4f5; /* same grey as the dropdown bar */
-}
-div.sidebar-primary-item {
-	padding: 0.3rem !important;
 }
 img.logo__image {
 	width: 70%;
@@ -73,9 +73,42 @@ img.logo__image {
 p.logo__title {
 	font-size: 0.9rem !important;
 }
-div.sidebar-primary-item>h3 {
-	margin-top: 0.5rem;
-}
-div.sidebar-primary-item ul {
+div.sidebar-primary-item>ul {
+	margin-top: -1rem;
 	margin-left: -1rem;
+}
+div.sidebar-primary-item ul:not(:has(li.toctree-l1)) {
+	padding-left: 0.6rem;
+}
+div.sidebar-primary-item:has(div.model-title) {
+	margin-top: -2.5rem
+}
+div.model-title>h3 {
+	font-size: 0.8rem;
+	font-weight: bold;
+	margin-bottom: 0;
+	text-align: center;
+}
+/* main content */
+section>h1 {
+	font-size: 2rem;
+}
+section>h2 {
+	font-size: 1.2rem;
+	margin-top: 0;
+	margin-bottom: 0.25rem;
+}
+/* dropdowns */
+summary.sd-summary-title {
+	font-size: 1.2rem;
+	font-weight: normal !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-left: 0.2rem !important;
+}
+div.sd-summary-down, div.sd-summary-up {
+	margin-top: -0.5rem;
+}
+details.sd-dropdown {
+	margin-bottom: 0.5rem !important;
 }
