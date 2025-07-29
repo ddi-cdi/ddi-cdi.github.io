@@ -1,5 +1,105 @@
+// global variables
+//var modal;
+// var svgDiagram;
+//var openModal;
 var script_folder = document.currentScript.src.split('/').slice(0, -1).join('/'); // must be before $ ...
 $(document).ready(function() {
+	// start of diagram in modal part	
+//	  var objectTag;
+	  var svgDocument;
+	  setTimeout(() => {
+		var objectTag = document.querySelector("div#svgDiagram object");
+		svgDocument = objectTag.contentDocument;
+//	  objectTag.addEventListener('load', function(){
+//    svgDocument = objectTag.contentDocument;
+//	  });
+	  var svgNode = svgDocument.querySelector("svg");
+	  var svgClone = svgNode.cloneNode(true);
+	  var panzoomArea = document.getElementById("panzoom-area");
+	  panzoomArea.append(svgClone);
+	  var modal = document.getElementById("myModal");
+	  var svgDiagram = document.getElementById("svgDiagram");
+	  var closeModal = document.getElementById("closeModal");
+	  var openModal = document.getElementById("openModal");
+	  var resetDiagram = document.getElementById("resetDiagram");
+	  var downloadDiagram = document.getElementById("downloadDiagram");
+	  svgDiagram.onclick = function() {
+	    modal.style.display = "block";
+	  };
+	  openModal.onclick = function() {
+	    modal.style.display = "block";
+	  };
+	  closeModal.onclick = function() {
+	    modal.style.display = "none";
+	  };
+	  // reset panzoom
+	  resetDiagram.onclick = function() {
+	    panzoom.reset();
+	  };
+	  // When the user clicks on <span> (download), download svg as svg
+	  /*
+	downloadDiagram.onclick = function() {
+	  // code from from https://stackoverflow.com/questions/28226677/save-inline-svg-as-jpeg-png-svg#69067443
+	  var svg = document.querySelector('svg');
+	  var data = (new XMLSerializer()).serializeToString(svg);
+	  var svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
+	//  var url = URL.createObjectURL(svgBlob);
+	  download('diagram.svg', svgBlob);
+	}
+	*/
+	  // download svg as png
+	  downloadDiagram.onclick = function() {
+	    // code for this and download from https://stackoverflow.com/questions/28226677/save-inline-svg-as-jpeg-png-svg#55013028
+	    var data = new XMLSerializer().serializeToString(svgNode);
+	    var canvas = document.createElement("canvas");
+	    var svgTextItems = document.querySelectorAll("svg text");
+	    var filename = svgTextItems[svgTextItems.length - 1].innerHTML + ".png"; // results in save filename
+	    canvg(canvas, data, {
+	      renderCallback: function() {
+	        canvas.toBlob(function(blob) {
+	          download(filename, blob);
+	        }, "image/png"); // results in transparent background
+	        //      }, 'image/jpeg');  // results in black background
+	      },
+	    });
+	  };
+	  function download(filename, blob) {
+	    if (window.navigator.msSaveOrOpenBlob) {
+	      window.navigator.msSaveBlob(blob, filename);
+	    } else {
+	      const elem = window.document.createElement("a");
+	      elem.href = window.URL.createObjectURL(blob);
+	      elem.download = filename;
+	      document.body.appendChild(elem);
+	      elem.click();
+	      document.body.removeChild(elem);
+	    }
+	  }
+	  // When the user clicks anywhere outside of the modal, close it
+	  window.onclick = function(event) {
+	    if (event.target == modal) {
+	      modal.style.display = "none";
+	    }
+	  };
+	  // in case of escape, close the modal
+	  window.addEventListener("keydown", function(event) {
+	    if (event.key === "Escape") {
+	      modal.style.display = "none";
+	    }
+	  });
+	  var anchorNodelist = document.querySelectorAll("svg a[target='_top']");
+	  var anchorArray = Array.from(anchorNodelist);
+	  var panzoom = Panzoom(document.getElementById("panzoom-area"), {
+	    canvas: true, // important for pan in whole modal area
+	    exclude: anchorArray,
+	    maxScale: 6,
+	  });
+	  document
+	    .getElementById("panzoom-wrapper")
+	    .addEventListener("wheel", panzoom.zoomWithWheel);
+		}, "200");
+// end of diagram in modal part	
+//
 	// adjust encoding urls
 	$('div.encoding > p > a.external').each(function(){
 		changeUrl(this);
@@ -18,7 +118,7 @@ $(document).ready(function() {
 	// end of adjust encoding urls
 	var svgUrl = $('div#diagram object').attr('data');
 //	var svgUrl = $('p.plantuml object').attr('data');
-	$( 'div#diagram p.plantuml' ).prepend( '<a class="diagram-link" href="' + svgUrl + '" target="_blank">Open diagram in additional window</a>' );
+//	$( 'div#diagram p.plantuml' ).prepend( '<a class="diagram-link" href="' + svgUrl + '" target="_blank">Open diagram in additional window</a>' );
 //	$( 'p.plantuml' ).prepend( '<a class="diagram-link" href="' + svgUrl + '" target="_blank">Open diagram in separate window</a>' );
 
 	// set logo link to external page

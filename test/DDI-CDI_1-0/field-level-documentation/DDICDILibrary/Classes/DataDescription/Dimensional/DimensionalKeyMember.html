@@ -32,7 +32,8 @@
     <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=7a31734b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=4427ac8d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/diagramModal.css?v=2bbcc7a6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -48,7 +49,7 @@
     <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../../../_static/custom.js?v=ce0dd7b6"></script>
+    <script src="../../../../_static/custom.js?v=22a66d8d"></script>
     <script src="../../../../_static/_modelDefinition.js?v=897f6d42"></script>
     <script src="../../../../_static/_modelUrl.js?v=c7c3571b"></script>
     <script src="../../../../_static/design-tabs.js?v=36754332"></script>
@@ -57,7 +58,7 @@
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="DimensionGroup" href="DimensionGroup.html" />
     <link rel="prev" title="DimensionalKeyDefinitionMember" href="DimensionalKeyDefinitionMember.html" /> 
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.datatables.net/ https://code.jquery.com/ https://d3js.org/d3.v4.min.js https://cdn.jsdelivr.net/; style-src 'self' 'unsafe-inline' https://cdn.datatables.net/ https://code.jquery.com/; img-src 'self' https://cdn.datatables.net/;">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.datatables.net/ https://code.jquery.com/ https://unpkg.com/ https://cdnjs.cloudflare.com/ https://cdn.jsdelivr.net/; style-src 'self' 'unsafe-inline' https://cdn.datatables.net/ https://code.jquery.com/; img-src 'self' https://cdn.datatables.net/;" />
     <!-- loaded before custom.js required. Done now with sphinxcontrib-jquery. See example Agent.html.
     <script
               src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -78,7 +79,13 @@
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 <!--     <script src="https://d3js.org/d3.v4.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.2/dist/svg-pan-zoom.min.js"></script>
+<!--     <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.2/dist/svg-pan-zoom.min.js"></script> -->
+    <script src="https://unpkg.com/@panzoom/panzoom@4.6.0/dist/panzoom.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.1/canvg.js"
+      integrity="sha512-Qw1+j4vl/AjCqxrx/omDzobdEepDHathD3Z0bwulQSrLlaTtTWhiH3sMSDU4oK2TP2EfyzHgg33gh2zxUAI3EQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
     <!--
     already loaded by sphinx
 	<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript" language="javascript"></script>
@@ -176,7 +183,7 @@
   
 </a></div>
         <div class="sidebar-primary-item"><div class="model-title">
-<h3>UML Model DDI-CDI 1.0 Documentation</h3>
+<h3>DDI-CDI 1.0 UML Model Documentation</h3>
 </div></div>
         <div class="sidebar-primary-item">
 <form class="bd-search d-flex align-items-center"
@@ -252,6 +259,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">About</a></li>
 </ul>
 </div>
+        <div class="sidebar-primary-item">
+<nav class="sidebar-indices-items">
+  <p class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
     </div>
   
   
@@ -455,24 +473,24 @@ Diagram<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="plantuml">
+<div id="svgDiagram" class="noprint" title="Click to enlarge">
+  <span id="openModal" title="Open diagram view">&#x25F3;</span><p class="plantuml">
 <object data="../../../../_images/plantuml-25e66e127effb9c6598df4eabc1c9b438bd9b23d.svg" type="image/svg+xml" style="width:2226px;height:1526px;background:#FFFFFF;"></object></p>
-<script>
-  // Don't use window.onLoad like this in production, because it can only listen to one function.
-  window.onload = function() {
-    var panZoom = window.panZoom = svgPanZoom('object', {
-      zoomEnabled: true,
-      controlIconsEnabled: true,
-      fit: 1,
-      center: 1
-    });
-    $(window).resize(function(){
-      panZoom.resize();
-      panZoom.fit();
-      panZoom.center();
-    })
-  };
-</script></div>
+</div>
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div id="buttons" class="noprint">
+        <span id="resetDiagram" title="Reset pan/zoom">&circlearrowleft;</span>
+        <span id="downloadDiagram" title="Download diagram">&DownArrowBar;</span>
+        <span id="closeModal" title="Close diagram view">&#x2715;</span>
+      </div>
+    <div id="panzoom-wrapper">
+      <div id="panzoom-area">
+      </div>
+    </div>
+  </div>
+</div></div>
 </details></div>
 <div class="docutils container" id="inheritance">
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -974,7 +992,7 @@ JSON-LD</label><div class="sd-tab-content encoding docutils">
 <span class="linenos">19</span><span class="w">      </span><span class="nt">&quot; comment &quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tag:json-should-support-trailing-commas&quot;</span>
 <span class="linenos">20</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">21</span><span class="w">  </span><span class="p">],</span>
-<span class="linenos">22</span><span class="w">  </span><span class="nt">&quot;generatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This code was generated by the Eclipse Acceleo project UCMIS M2T on 2025-07-21 21:54:16.&quot;</span><span class="p">,</span>
+<span class="linenos">22</span><span class="w">  </span><span class="nt">&quot;generatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This code was generated by the Eclipse Acceleo project UCMIS M2T on 2025-07-29 22:02:08.&quot;</span><span class="p">,</span>
 <span class="linenos">23</span><span class="w">  </span><span class="nt">&quot;basedOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;based on the UML data type DDICDIModels::DDICDILibrary::Classes::DataDescription::Dimensional::DimensionalKeyMember&quot;</span>
 <span class="linenos">24</span><span class="p">}</span>
 </pre></div>
