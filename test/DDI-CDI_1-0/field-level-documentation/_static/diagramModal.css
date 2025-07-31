@@ -1,6 +1,6 @@
-body {
+/* body {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 /* The Modal (background) */
 #myModal {
   z-index: 2000;
@@ -19,7 +19,7 @@ body {
   /*  background-color: rgba(0,0,0,0.4); */ /* Black w/ opacity */
 }
 /* Modal Content */
-.modal-content {
+#modal-content {
   background-color: white;
   margin: auto;
   width: 100%;
@@ -44,12 +44,17 @@ span#openModal {
   z-index: 2;
   padding-right: 1.4rem;
 }
-#closeModal:hover,
 #closeModal:focus,
-#downloadDiagram:hover,
-#downloadDiagram:focus,
+#closeModal:hover,
+#downloadDiagramPng:focus,
+#downloadDiagramPng:hover,
+#downloadDiagramSvg:focus,
+#downloadDiagramSvg:hover,
+#openModal:focus,
+#openModal:hover,
 #resetDiagram:hover,
-#resetDiagram:focus {
+#resetDiagram:focus,
+#resetDiagram:hover {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -66,9 +71,9 @@ div#panzoom-area > svg {
     display: none;
   }
 }
-#svgDiagram > svg {
+/* #svgDiagram > svg {
   pointer-events: none;
-}
+} */
 /*
 #svgDiagram:hover {
   opacity: 0.5;

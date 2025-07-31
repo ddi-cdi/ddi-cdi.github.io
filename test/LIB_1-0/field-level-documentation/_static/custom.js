@@ -5,6 +5,39 @@
 var script_folder = document.currentScript.src.split('/').slice(0, -1).join('/'); // must be before $ ...
 $(document).ready(function() {
 	// start of diagram in modal part	
+		function downloadMessage(msg) {
+			var isInFullScreen =
+			  (document.fullscreenElement && document.fullscreenElement !== null) ||
+			  (document.webkitFullscreenElement &&
+			    document.webkitFullscreenElement !== null);
+			if (isInFullScreen) {
+		 var el = document.createElement("div");
+		 el.setAttribute("id", "download-message");
+		 el.innerHTML = msg;
+		 setTimeout(function(){
+		  el.parentNode.removeChild(el);
+		 }, 5000);
+		 document.querySelector(".modal-content").prepend(el);
+		 }
+		}
+	function openFullScreen() {
+		var isInFullScreen =
+		  (document.fullscreenElement && document.fullscreenElement !== null) ||
+		  (document.webkitFullscreenElement &&
+		    document.webkitFullscreenElement !== null);
+		if (!isInFullScreen) {
+			toggleFullScreen();
+		}
+	}
+	function closeFullScreen() {
+		var isInFullScreen =
+		  (document.fullscreenElement && document.fullscreenElement !== null) ||
+		  (document.webkitFullscreenElement &&
+		    document.webkitFullscreenElement !== null);
+		if (isInFullScreen) {
+			toggleFullScreen();
+		}
+	}
 //	  var objectTag;
 	  var svgDocument;
 	  setTimeout(() => {
@@ -15,61 +48,90 @@ $(document).ready(function() {
 //	  });
 	  var svgNode = svgDocument.querySelector("svg");
 	  var svgClone = svgNode.cloneNode(true);
+	  var svgClone2 = svgNode.cloneNode(true);
 	  var panzoomArea = document.getElementById("panzoom-area");
 	  panzoomArea.append(svgClone);
 	  var modal = document.getElementById("myModal");
-	  var svgDiagram = document.getElementById("svgDiagram");
-	  var closeModal = document.getElementById("closeModal");
+/*	  var svgDiagram = document.getElementById("svgDiagram");
+*/	  var closeModal = document.getElementById("closeModal");
 	  var openModal = document.getElementById("openModal");
 	  var resetDiagram = document.getElementById("resetDiagram");
-	  var downloadDiagram = document.getElementById("downloadDiagram");
-	  svgDiagram.onclick = function() {
+	  var downloadDiagramPng = document.getElementById("downloadDiagramPng");
+	  var downloadDiagramSvg = document.getElementById("downloadDiagramSvg");
+/* works for whole diagram but can irritate especially when clicking link 
+	  document.querySelector("div#svgDiagram object").contentDocument.querySelector("svg").onclick = function() {
+	    document.getElementById("myModal").style.display = "block";
+	  };
+*/
+/* svg title event works
+      var titleNode = svgDocument.querySelector("svg g>text");
+	  titleNode.onclick = function() {
 	    modal.style.display = "block";
 	  };
+	  titleNode.style.cursor = "pointer";
+*/
 	  openModal.onclick = function() {
+        openFullScreen();
 	    modal.style.display = "block";
 	  };
 	  closeModal.onclick = function() {
+        closeFullScreen();
 	    modal.style.display = "none";
 	  };
 	  // reset panzoom
 	  resetDiagram.onclick = function() {
 	    panzoom.reset();
 	  };
-	  // When the user clicks on <span> (download), download svg as svg
-	  /*
-	downloadDiagram.onclick = function() {
-	  // code from from https://stackoverflow.com/questions/28226677/save-inline-svg-as-jpeg-png-svg#69067443
-	  var svg = document.querySelector('svg');
-	  var data = (new XMLSerializer()).serializeToString(svg);
-	  var svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
-	//  var url = URL.createObjectURL(svgBlob);
-	  download('diagram.svg', svgBlob);
-	}
-	*/
 	  // download svg as png
-	  downloadDiagram.onclick = function() {
+	  downloadDiagramPng.onclick = function() {
+//		closeFullScreen();
 	    // code for this and download from https://stackoverflow.com/questions/28226677/save-inline-svg-as-jpeg-png-svg#55013028
-	    var data = new XMLSerializer().serializeToString(svgNode);
+	    var data = new XMLSerializer().serializeToString(svgClone);
 	    var canvas = document.createElement("canvas");
 	    var svgTextItems = document.querySelectorAll("svg text");
-	    var filename = svgTextItems[svgTextItems.length - 1].innerHTML + ".png"; // results in save filename
+		var topic = svgTextItems[svgTextItems.length - 1].innerHTML;
+		var filename = topic + ".png";
 	    canvg(canvas, data, {
 	      renderCallback: function() {
 	        canvas.toBlob(function(blob) {
 	          download(filename, blob);
 	        }, "image/png"); // results in transparent background
-	        //      }, 'image/jpeg');  // results in black background
+	        //      }, 'image/jpeg');  // results in black (transparent?) background
 	      },
 	    });
+		downloadMessage('PNG file downloaded for <br/>' + topic);
 	  };
+      // download svg as svg
+	  downloadDiagramSvg.onclick = function() {
+//		closeFullScreen();
+		const svgAnodes = svgClone2.querySelectorAll("svg a");
+		if (modelDocumentationUrl) {
+          for (const anode of svgAnodes) {
+ 		    if (anode.href.baseVal.startsWith('../')) {
+		      anode.href.baseVal = anode.href.baseVal.replace('../', modelDocumentationUrl);
+		    }
+		  }
+		}
+	    // code from from https://stackoverflow.com/questions/28226677/save-inline-svg-as-jpeg-png-svg#69067443
+		var data = new XMLSerializer().serializeToString(svgClone2);
+/*	    var svg = document.querySelector('svg');
+	    var data = (new XMLSerializer()).serializeToString(svg);
+*/
+        var svgTextItems = document.querySelectorAll("svg text");
+		var topic = svgTextItems[svgTextItems.length - 1].innerHTML;
+        var filename = topic + ".svg";
+	    var svgBlob = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
+	    //  var url = URL.createObjectURL(svgBlob);
+	    download(filename, svgBlob); // results in save filename
+		downloadMessage('SVG file downloaded for <br/>' + topic);
+	  }
 	  function download(filename, blob) {
 	    if (window.navigator.msSaveOrOpenBlob) {
 	      window.navigator.msSaveBlob(blob, filename);
 	    } else {
 	      const elem = window.document.createElement("a");
 	      elem.href = window.URL.createObjectURL(blob);
-	      elem.download = filename;
+		  elem.download = filename;
 	      document.body.appendChild(elem);
 	      elem.click();
 	      document.body.removeChild(elem);
@@ -92,7 +154,7 @@ $(document).ready(function() {
 	  var panzoom = Panzoom(document.getElementById("panzoom-area"), {
 	    canvas: true, // important for pan in whole modal area
 	    exclude: anchorArray,
-	    maxScale: 6,
+	    maxScale: 15,
 	  });
 	  document
 	    .getElementById("panzoom-wrapper")
@@ -122,10 +184,12 @@ $(document).ready(function() {
 //	$( 'p.plantuml' ).prepend( '<a class="diagram-link" href="' + svgUrl + '" target="_blank">Open diagram in separate window</a>' );
 
 	// set logo link to external page
+/*
 	$("p.logo > a").each(function(){
 		$(this).attr('href', modelUrl);
 		$(this).attr('target', '_blank');
 	});
+*/
 
 	// add tool tips to internal references
 	// definition is in additional definition.js created by modelQuery.mtl
@@ -143,10 +207,10 @@ $(document).ready(function() {
 	});
 
 	// jquery tooltip can be styled. see: https://jqueryui.com/tooltip/
-// error: can't convert undefined to object ??
-//	$( function() {
-//		$( document ).tooltip();
-//	} );
+// error if selector is document: can't convert undefined to object ??
+	$( function() {
+		$( 'a' ).tooltip();
+	} );
   
     $('table.datatable-basic').DataTable({
         "info": false,
@@ -690,3 +754,5 @@ function set_position_from_cookie() {
         }
     });
 })(window, document, jQuery);
+// which is better?
+// });

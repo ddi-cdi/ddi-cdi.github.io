@@ -1,3 +1,23 @@
+div#download-message {
+	z-index: 5000;
+	position: absolute;
+	top: 5rem;
+	right: 2rem;
+	border-style: solid;
+	border-width: thin;
+	padding: 1rem;
+	box-shadow: 4px 2px #888888;
+	border-radius: 8px;
+	font-family: 'Inter', sans-serif;
+	font-size: 0.9rem;
+	font-weight: bold;
+	background-color: white;
+/* 	border-color: #808080; */
+}
+/* back-to-top button can irritate in complex pages */
+button#pst-back-to-top {
+	display: none !important;
+}
 /* link color */
 div.sidebar-primary-item a, article.bd-article a {
 	color: blue !important;
@@ -10,6 +30,8 @@ button.theme-switch-button {
 p.plantuml>object {
 	max-width: 100% !important;
 	height: auto !important;
+	display: block;
+	margin: auto;
 }
 /*
 Enable full width for content in combination with configuration
@@ -46,6 +68,9 @@ article.bd-article {
   	font-size: 0.9rem;
   	padding-left: 1rem !important;
   	padding-right: 1rem !important;
+}
+div.header-article-items {
+	height: 2rem !important;
 }
 footer.prev-next-footer {
 	font-size: 0.8rem;
