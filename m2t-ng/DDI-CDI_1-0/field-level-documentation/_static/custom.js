@@ -212,47 +212,43 @@ $(document).ready(function() {
 */		}
 	});
 	// generic tooltips
-	$("section#diagram > details > summary").attr('title', definition['tooltip.diagram']);
-	$("section#inheritance > details > summary").attr('title', definition['tooltip.inheritance']);
-	$("section#attributes > details > summary").attr('title', definition['tooltip.attribute']);
-	$("section#associations > details > summary").attr('title', definition['tooltip.association']);
-	$("section#usage > details > summary").attr('title', definition['tooltip.usage']);
-	$("section#encodings details > summary").attr('title', definition['tooltip.encoding']);
-	$("section#enumeration-literals > details > summary").attr('title', definition['tooltip.enumeration-literal']);
-	$('label.sd-tab-label:contains("Canonical XMI")').attr('title', definition['tooltip.canonical-xmi']);
-	$('label.sd-tab-label:contains("XML Schema")').attr('title', definition['tooltip.xml-schema']);
-	$('label.sd-tab-label:contains("JSON Schema")').attr('title', definition['tooltip.json-schema']);
-	$('label.sd-tab-label:contains("Ontology (Turtle)")').attr('title', definition['tooltip.rdf-ontology']);
-	$('label.sd-tab-label:contains("JSON-LD")').attr('title', definition['tooltip.json-ld']);
-	$('label.sd-tab-label:contains("SHACL")').attr('title', definition['tooltip.shacl']);
-	$('label.sd-tab-label:contains("ShEx")').attr('title', definition['tooltip.shex']);
-	$('p#index-0:contains("Fully qualified class")').attr('title', definition['tooltip.class']);
-	$('p#index-0:contains("Fully qualified datatype")').attr('title', definition['tooltip.data-type']);
-	$('p#index-0:contains("Fully qualified enumeration")').attr('title', definition['tooltip.enumeration']);
-	$('div.dt-column-header:has(span.dt-column-title:contains("Coupling"))').attr('title', definition['tooltip.coupling']);
-	$('section#all-associations th:eq(0)').attr('title', definition['tooltip.coupling']);
-	$('section#all-associations th:eq(3)').attr('title', definition['tooltip.navigability']);
-	$('section#all-associations th:eq(4)').attr('title', definition['tooltip.aggregation-kind']);
-	$('section#all-associations th:eq(5)').attr('title', definition['tooltip.multiplicity']);
-	$('section#all-associations th:eq(7)').attr('title', definition['tooltip.multiplicity']);
-	$('section#all-associations th:eq(8)').attr('title', definition['tooltip.aggregation-kind']);
-	$('section#all-associations th:eq(9)').attr('title', definition['tooltip.navigability']);
-	$('section#attributes th:eq(4)').attr('title', definition['tooltip.multiplicity']);
-	$('section#associations th:eq(3)').attr('title', definition['tooltip.multiplicity']);
-	$('section#associations th:eq(6)').attr('title', definition['tooltip.multiplicity']);
-	$('section#associations th:eq(7)').attr('title', definition['tooltip.aggregation-kind']);
-	$('section#usage th:eq27)').attr('title', definition['tooltip.classifier']);
+	function addTooltip(selector, tooltip) {
+		var n = $(selector);
+		if (n.length > 0) {
+			n.attr('title', tooltip);
+		}
+	}
+	addTooltip('section#diagram > details > summary', definition['tooltip.diagram']);
+	addTooltip('section#inheritance > details > summary', definition['tooltip.inheritance']);
+	addTooltip('section#attributes > details > summary', definition['tooltip.attribute']);
+	addTooltip('section#associations > details > summary', definition['tooltip.association']);
+	addTooltip('section#usage > details > summary', definition['tooltip.usage']);
+	addTooltip('section#encodings details > summary', definition['tooltip.encoding']);
+	addTooltip('section#enumeration-literals > details > summary', definition['tooltip.enumeration-literal']);
+	addTooltip('label.sd-tab-label:contains("Canonical XMI")', definition['tooltip.canonical-xmi']);
+	addTooltip('label.sd-tab-label:contains("XML Schema")', definition['tooltip.xml-schema']);
+	addTooltip('label.sd-tab-label:contains("JSON Schema")', definition['tooltip.json-schema']);
+	addTooltip('label.sd-tab-label:contains("Ontology (Turtle)")', definition['tooltip.rdf-ontology']);
+	addTooltip('label.sd-tab-label:contains("JSON-LD")', definition['tooltip.json-ld']);
+	addTooltip('label.sd-tab-label:contains("SHACL")', definition['tooltip.shacl']);
+	addTooltip('label.sd-tab-label:contains("ShEx")', definition['tooltip.shex']);
+	addTooltip('p#index-0:contains("Fully qualified class")', definition['tooltip.class']);
+	addTooltip('p#index-0:contains("Fully qualified datatype")', definition['tooltip.data-type']);
+	addTooltip('p#index-0:contains("Fully qualified enumeration")', definition['tooltip.enumeration']);
+	addTooltip('div.dt-column-header:has(span.dt-column-title:contains("Coupling"))', definition['tooltip.coupling']);
+	addTooltip('section#all-associations th:eq(0)', definition['tooltip.coupling']);
+	addTooltip('section#all-associations th:eq(3)', definition['tooltip.navigability']);
+	addTooltip('section#all-associations th:eq(4)', definition['tooltip.aggregation-kind']);
+	addTooltip('section#all-associations th:eq(5)', definition['tooltip.multiplicity']);
+	addTooltip('section#all-associations th:eq(7)', definition['tooltip.multiplicity']);
+	addTooltip('section#all-associations th:eq(8)', definition['tooltip.aggregation-kind']);
+	addTooltip('section#all-associations th:eq(9)', definition['tooltip.navigability']);
+	addTooltip('section#attributes th:eq(4)', definition['tooltip.multiplicity']);
+	addTooltip('section#associations th:eq(3)', definition['tooltip.multiplicity']);
+	addTooltip('section#associations th:eq(6)', definition['tooltip.multiplicity']);
+	addTooltip('section#associations th:eq(7)', definition['tooltip.aggregation-kind']);
+	addTooltip('section#usage th:eq(2)', definition['tooltip.classifier']);
 
-	/*	$("Xsection#diagram").each(function() {
-			term = $(this).text().replace(/[^:]+::/, '');
-			tooltip = definition[term];
-			if (tooltip === undefined) {
-				$(this).attr('title', '');
-			} else {
-				$(this).attr('title', tooltip);
-			}
-		});
-	*/
 	// jquery tooltip can be styled. see: https://jqueryui.com/tooltip/
 	// error if selector is document: can't convert undefined to object ??
 	// bootstrap tooltip take over, can't be avoided if bootstrap is used??.
