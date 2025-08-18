@@ -14,14 +14,6 @@ button.theme-switch-button {
 	display: none !important;
 }
 
-/* adjust size of plantuml diagram */
-p.plantuml>object {
-	max-width: 100% !important;
-	height: auto !important;
-	display: block;
-	margin: auto;
-}
-
 /*
 Enable full width for content in combination with configuration
 in conf.py: 'secondary_sidebar_items': []
@@ -420,4 +412,145 @@ button.btn, button.page-link {
 .table-hover tbody tr:hover, .table-hover tbody tr:hover td{
   background-color: Cornsilk;
   box-shadow: unset !important;
+}
+
+@media screen {
+	/* adjust size of plantuml diagram */
+	p.plantuml > object {
+		max-width: 100% !important;
+		height: auto !important;
+		display: block;
+		margin: auto;
+	}
+	section#diagram > h2,
+	section#inheritance > h2,
+	section#attributes > h2,
+	section#associations > h2,
+	section#encodings > h2,
+	section#usage > h2,
+	section#enumeration-literals > h2,
+	table.main-table > caption
+	{
+		display: none;
+	}
+}
+
+@media print {
+/* can't be changed by user
+	@page {
+		size: landscape;
+	} */
+	/* not used yet */
+	@page landscape {
+		size: landscape;
+	}
+	body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    pre {
+    	font-family: "Courier New", Courier, mono;
+    }
+	table.main-table *, table.main-table td {
+        box-shadow: unset !important;
+	}
+	table.main-table tr {
+		border-top: 1px solid gray !important;
+    }
+	a,
+	table.main-table td a,
+	ul.pagination > li > button
+	{
+		color: black !important;
+		text-decoration: none;
+	}
+	ul.pagination > li.active > button
+	{
+		border-color: black;
+	}
+	div#print-main-content,		/* local table of contents at top */
+	div.dtsp-panesContainer, div.mt-2:has(div > div.dt-length),
+ 	div.bd-article-container > footer,
+ 	a.skip-link
+ 	{
+ 		display: none;
+	}
+	section#diagram,
+	section#inheritance,
+	section#attributes,
+	section#associations,
+	section#encodings,
+	section#usage,
+	section#enumeration-literals
+	{
+		visibility: hidden;
+	}
+	section:has(h1),
+	details > div.sd-summary-content *,
+	section#all-classes,
+	section#all-associations,
+	section#all-structured-data-types,
+	section#all-enumerations,
+	section#all-packages
+	{
+ 		visibility: visible;
+	}
+	main#main-content > footer.bd-footer-content {
+		display: block !;
+ 		visibility: hidden;
+	}
+	/* p.copyright {
+ 		visibility: visible;
+	} */
+    p.plantuml {
+		display: flex;
+		justify-content: center; /* OK, horizonally */
+	    /* ?? not clear if this works */ 
+		align-items: center !important;
+    }
+   	p.plantuml > object {
+  		/* A4 210mm x 297mm, letter 215.9mm x 279.4mm */
+   		height: 147mm !important; /* 70% of 210mm */
+  		width: 195.58mm !important; /* 70% of 279.4mm */
+		/* 		object-fit: cover; */
+/* 		break-before: page; */
+	}
+	/* article header */
+	div.onlyprint {
+		margin-bottom: 1rem;
+	}
+	div.onlyprint > h1 {
+		font-size: 1.5em !important;
+	}
+	section#diagram,
+	section#inheritance,
+	section#encodings,
+	section#attributes > table,
+	section#associations > table,
+	section#usage > table,
+	section#enumeration-literals > table
+	{
+		break-inside: avoid;
+	}
+	section > h2,
+	table.main-table > caption
+	{
+		font-size: 1.4rem;
+	}
+	/* section#inheritance > h2,
+	section#usage > h2,
+	section#enumeration-literals > h2,
+	section#encodings > h2 {
+		text-align: center
+	} */
+ 	section#associations table.main-table,
+ 	table#datatable-classes-list,
+ 	table#datatable-associations-list,
+ 	table#all-structured-data-types
+ 	{
+		zoom: 78%;
+	}
+	div#encodings pre {
+		white-space: pre-wrap;
+		font-size: 0.7rem;
+	}
 }

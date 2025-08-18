@@ -211,7 +211,48 @@ $(document).ready(function() {
 			$(this).attr('data-bs-placement', 'right'); // for bootstrap tooltip, right as default
 */		}
 	});
+	// generic tooltips
+	$("section#diagram > details > summary").attr('title', definition['tooltip.diagram']);
+	$("section#inheritance > details > summary").attr('title', definition['tooltip.inheritance']);
+	$("section#attributes > details > summary").attr('title', definition['tooltip.attribute']);
+	$("section#associations > details > summary").attr('title', definition['tooltip.association']);
+	$("section#usage > details > summary").attr('title', definition['tooltip.usage']);
+	$("section#encodings details > summary").attr('title', definition['tooltip.encoding']);
+	$("section#enumeration-literals > details > summary").attr('title', definition['tooltip.enumeration-literal']);
+	$('label.sd-tab-label:contains("Canonical XMI")').attr('title', definition['tooltip.canonical-xmi']);
+	$('label.sd-tab-label:contains("XML Schema")').attr('title', definition['tooltip.xml-schema']);
+	$('label.sd-tab-label:contains("JSON Schema")').attr('title', definition['tooltip.json-schema']);
+	$('label.sd-tab-label:contains("Ontology (Turtle)")').attr('title', definition['tooltip.rdf-ontology']);
+	$('label.sd-tab-label:contains("JSON-LD")').attr('title', definition['tooltip.json-ld']);
+	$('label.sd-tab-label:contains("SHACL")').attr('title', definition['tooltip.shacl']);
+	$('label.sd-tab-label:contains("ShEx")').attr('title', definition['tooltip.shex']);
+	$('p#index-0:contains("Fully qualified class")').attr('title', definition['tooltip.class']);
+	$('p#index-0:contains("Fully qualified datatype")').attr('title', definition['tooltip.data-type']);
+	$('p#index-0:contains("Fully qualified enumeration")').attr('title', definition['tooltip.enumeration']);
+	$('div.dt-column-header:has(span.dt-column-title:contains("Coupling"))').attr('title', definition['tooltip.coupling']);
+	$('section#all-associations th:eq(0)').attr('title', definition['tooltip.coupling']);
+	$('section#all-associations th:eq(3)').attr('title', definition['tooltip.navigability']);
+	$('section#all-associations th:eq(4)').attr('title', definition['tooltip.aggregation-kind']);
+	$('section#all-associations th:eq(5)').attr('title', definition['tooltip.multiplicity']);
+	$('section#all-associations th:eq(7)').attr('title', definition['tooltip.multiplicity']);
+	$('section#all-associations th:eq(8)').attr('title', definition['tooltip.aggregation-kind']);
+	$('section#all-associations th:eq(9)').attr('title', definition['tooltip.navigability']);
+	$('section#attributes th:eq(4)').attr('title', definition['tooltip.multiplicity']);
+	$('section#associations th:eq(3)').attr('title', definition['tooltip.multiplicity']);
+	$('section#associations th:eq(6)').attr('title', definition['tooltip.multiplicity']);
+	$('section#associations th:eq(7)').attr('title', definition['tooltip.aggregation-kind']);
+	$('section#usage th:eq27)').attr('title', definition['tooltip.classifier']);
 
+	/*	$("Xsection#diagram").each(function() {
+			term = $(this).text().replace(/[^:]+::/, '');
+			tooltip = definition[term];
+			if (tooltip === undefined) {
+				$(this).attr('title', '');
+			} else {
+				$(this).attr('title', tooltip);
+			}
+		});
+	*/
 	// jquery tooltip can be styled. see: https://jqueryui.com/tooltip/
 	// error if selector is document: can't convert undefined to object ??
 	// bootstrap tooltip take over, can't be avoided if bootstrap is used??.
@@ -331,7 +372,8 @@ $(document).ready(function() {
 			}
 		}
 	}
-	var datatable_attributes = $('table#datatable-attributes').DataTable({
+/*	var datatable_attributes = $('table#datatable-attributes').DataTable({
+*/	var datatable_attributes = $('#attributes-responsive table.main-table').DataTable({
 		columnDefs: [
 			{ targets: '_all', className: 'dt-head-center' },
 			{ targets: [4], className: 'dt-body-center' },
@@ -340,7 +382,7 @@ $(document).ready(function() {
 		],
 		order: [[0, 'asc'], [1, 'asc'], [3, 'asc']],
 	});
-	hideForFewRows(datatable_attributes, 'div#attributes');
+	hideForFewRows(datatable_attributes, 'section#attributes');
 	/*	if (datatable_attributes.rows().count() <= searchPanesRowsLimit) {
 			var pc = document.querySelector('div#attributes div.dtsp-panesContainer');
 			if (pc !== null) {
@@ -354,7 +396,7 @@ $(document).ready(function() {
 		$('#datatable-associations').find('div.dtsp-searchPanes a').contents().unwrap();
 	*/
 	//	$('#datatable-associations').find('colgroup').remove(); // otherwise wrong width by dt
-	var datatable_associations = $('table#datatable-associations').DataTable({
+	var datatable_associations = $('#associations-responsive table.main-table').DataTable({
 		columnDefs: [
 			{ targets: '_all', className: 'dt-head-center' },
 			{ targets: [0, 3, 6, 7], className: 'narrow-column dt-body-center' },
@@ -364,7 +406,7 @@ $(document).ready(function() {
 		],
 		order: [[5, 'asc'], [4, 'asc']]
 	});
-	hideForFewRows(datatable_associations, 'div#associations');
+	hideForFewRows(datatable_associations, 'section#associations');
 /*	if (datatable_associations.rows().count() <= searchPanesRowsLimit) {
 		var pc = document.querySelector('div#associations div.dtsp-panesContainer');
 		if (pc !== null) {
@@ -375,7 +417,7 @@ $(document).ready(function() {
 			l.setAttribute('style', 'display: none; !important')
 		}
 	}
-*/	var datatable_usage = $('table#datatable-usage').DataTable({
+*/	var datatable_usage = $('#usage-responsive table.main-table').DataTable({
 		columnDefs: [
 			{ targets: '_all', className: 'dt-head-center' },
 			{ targets: [0, 1, 3], searchPanes: { show: true } },
@@ -383,21 +425,21 @@ $(document).ready(function() {
 		],
 		order: [[0, 'asc'], [1, 'asc'], [2, 'asc'], [3, 'asc']]
 	});
-	hideForFewRows(datatable_usage, 'div#usage');
+	hideForFewRows(datatable_usage, 'section#usage');
 /*	if (datatable_usage.rows().count() <= searchPanesRowsLimit) {
 		var pc = document.querySelector('div#usage div.dtsp-panesContainer');
 		if (pc !== null) {
 			pc.setAttribute('style', 'display: none;')
 		}
 	}
-*/	var datatable_enumeration_literals = $('table#datatable-enumeration-literals').DataTable({
+*/	var datatable_enumeration_literals = $('#enumeration-literals-responsive table.main-table').DataTable({
 		columnDefs: [
 			{ targets: '_all', className: 'dt-head-center' },
 			{ targets: '_all', searchPanes: { show: false } }
 		],
 		order: [[0, 'asc']]
 	});
-	hideForFewRows(datatable_enumeration_literals, 'div#enumeration-literals');
+	hideForFewRows(datatable_enumeration_literals, 'section#enumeration-literals');
 	var datatable_classes_list = $('table#datatable-classes-list').DataTable({
 		columnDefs: [
 			{ targets: '_all', className: 'dt-head-center' },
@@ -408,7 +450,7 @@ $(document).ready(function() {
 		],
 		order: [[0, 'asc']]
 	});
-	hideForFewRows(datatable_classes_list, 'section#all-classes-list');
+	hideForFewRows(datatable_classes_list, 'section#all-classes');
 /*	if (datatable_classes_list.rows().count() <= searchPanesRowsLimit) {
 		var pc = document.querySelector('section.all-classes-list div.dtsp-panesContainer');
 		if (pc !== null) {
@@ -422,7 +464,7 @@ $(document).ready(function() {
 		],
 		order: [[1, 'asc'], [2, 'asc'], [10, 'asc'], [11, 'asc']]
 	});
-	hideForFewRows(datatable_associations_list, 'section#all-associations-list');
+	hideForFewRows(datatable_associations_list, 'section#all-associations');
 /*	if (datatable_associations_list.rows().count() <= searchPanesRowsLimit) {
 		var pc = document.querySelector('section.all-associations-list div.dtsp-panesContainer');
 		if (pc !== null) {
@@ -439,7 +481,17 @@ $(document).ready(function() {
 		],
 		order: [[0, 'asc']]
 	});
-	hideForFewRows(datatable_datatypes_list, 'section#all-data-types-list');
+	hideForFewRows(datatable_datatypes_list, 'section#all-structured-data-types');
+	var datatable_enumerations_list = $('table#datatable-enumerations-list').DataTable({
+		columnDefs: [
+			{ targets: '_all', className: 'dt-head-center' },
+			{ targets: [2, 3], className: 'dt-body-center' },
+			{ targets: ['_all'], searchPanes: { show: true } },
+			{ targets: [], searchPanes: { show: false } }
+		],
+		order: [[1, 'asc'], [0, 'asc']]
+	});
+	hideForFewRows(datatable_datatypes_list, 'section#all-enumerations');
 /*	if (datatable_datatypes_list.rows().count() <= searchPanesRowsLimit) {
 		var pc = document.querySelector('section.all-data-types-list div.dtsp-panesContainer');
 		if (pc !== null) {
@@ -449,12 +501,12 @@ $(document).ready(function() {
 */	var datatable_packages_list = $('table#datatable-packages-list').DataTable({
 		columnDefs: [
 			{ targets: '_all', className: 'dt-head-center' },
-			{ targets: [2], className: 'dt-body-right' },
+			{ targets: [2, 3, 4], className: 'dt-body-right' },
 			{ targets: [1], searchPanes: { show: true } },
 		],
-		order: [[0, 'asc'], [1, 'asc']],
+		order: [[1, 'asc'], [0, 'asc']],
 	});
-	hideForFewRows(datatable_packages_list, 'section#all-packages-list');
+	hideForFewRows(datatable_packages_list, 'section#all-packages');
 	/*	if (datatable_packages_list.rows().count() <= searchPanesRowsLimit) {
 			var pc = document.querySelector('section.all-packages-list div.dtsp-panesContainer');
 			if (pc !== null) {
@@ -464,14 +516,60 @@ $(document).ready(function() {
 	*/
 
 	$("div.dtsp-searchPanes").wrap("<div class='dtsp-searchPanes-wrapper'></div>");
+	// open dropdown for fragment identifier
 	var fragment = window.location.hash.substring(1);
-	var selector = 'details.' + fragment + '-dropdown';
-	var section = document.querySelector(selector);
-	section.setAttribute('open', true);
-
+	if (fragment !== '') {
+		openDropdown(fragment);
+	}
+	function openDropdown(fragment) {
+		var selector = 'details.' + fragment + '-dropdown';
+		var section = document.querySelector(selector);
+		if (section !== null) {
+			section.setAttribute('open', true);
+		}
+		document.getElementById(fragment).scrollIntoView({ behavior: 'smooth' });
+	}
+	// set section header visible for print if dropdown is open
+	window.onbeforeprint = function() { beforeprint() };
+	window.onafterprint = function() { afterprint() };
+	function beforeprint() {
+		headerVisible('inheritance');
+		headerVisible('encodings');
+	}
+	function afterprint() {
+		headerHidden('inheritance');
+		headerHidden('encodings');
+	}
+	function headerVisible(sectionIdentifier) {
+		var h2 = document.querySelector('section#' + sectionIdentifier + ' > h2');
+		var dropdown = document.querySelector('details.' + sectionIdentifier + '-dropdown');
+		if (dropdown !== null && dropdown.open === true) {
+			h2.setAttribute('style', 'visibility: visible;')
+		}
+	}
+	function headerHidden(sectionIdentifier) {
+		var h2 = document.querySelector('section#' + sectionIdentifier + ' > h2');
+		if (h2 !== null) {
+			h2.setAttribute('style', 'visibility: hidden;')
+		}
+	}
+	// click on anchors opens dropdown
+	$('[href="#diagram"]').on('click', function() {
+		openDropdown($(this).attr('href').substring(1));
+	});
+	$('[href="#inheritance"]').on('click', function() {
+		openDropdown($(this).attr('href').substring(1));
+	});
+	$('[href="#attributes"]').on('click', function() {
+		openDropdown($(this).attr('href').substring(1));
+	});
+	$('[href="#associations"]').on('click', function() {
+		openDropdown($(this).attr('href').substring(1));
+	});
+	$('[href="#encodings"]').on('click', function() {
+		openDropdown($(this).attr('href').substring(1));
+	});
 	//	$("div.legend-searchpanes").html('Values in the interactive panel indicate frequencies in all unfiltered rows. Filters can be combined.');
-
-
 	$("div.legend-allassociations").html("Green underlined links in column 'Package 2' go to the list of associated packages of the clicked package.");
 
 	$('div.dtsp-searchPane div.dtsp-topRow div.dtsp-searchCont input.dtsp-search').each(function(i) {
