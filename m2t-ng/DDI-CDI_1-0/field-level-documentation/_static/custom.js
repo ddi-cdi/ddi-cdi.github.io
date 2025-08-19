@@ -249,15 +249,12 @@ $(document).ready(function() {
 	addTooltip('section#associations th:eq(7)', definition['tooltip.aggregation-kind']);
 	addTooltip('section#usage th:eq(2)', definition['tooltip.classifier']);
 
-	// jquery tooltip can be styled. see: https://jqueryui.com/tooltip/
-	// error if selector is document: can't convert undefined to object ??
-	// bootstrap tooltip take over, can't be avoided if bootstrap is used??.
-	// but jquery tooltip nicer. going back to browser tooltip.
-	// more consistent because svg tooltips are anyway styled by the browser.
-	/*	$( function() {
-			$( 'a' ).tooltip();
-		} );
-	*/
+	$(function() {
+		$('*[title]:not(div#myModal *)').tooltip({
+			'placement': 'left',
+			'delay': { "show": 500, "hide": 100 }
+		});
+	});
 	// hide page controls if there is only one page
 	// see: https://datatables.net/forums/discussion/49572/how-can-i-disable-paging-dynamically
 	/*		initComplete: function() {

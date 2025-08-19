@@ -39,7 +39,7 @@ span#openModal {
 	margin-right: -0.6rem;
 }
 
-#buttons {
+div#myModal > div > div#buttons {
 	background-color: white;
 	color: var(--pst-color-text-muted);
 	font-size: 2rem;
@@ -51,6 +51,7 @@ span#openModal {
 	z-index: 2;
 	padding-right: 1.4rem;
 	display: flex;
+	font-family: "Courier New", Courier, mono;
 }
 
 #closeModal:focus,
