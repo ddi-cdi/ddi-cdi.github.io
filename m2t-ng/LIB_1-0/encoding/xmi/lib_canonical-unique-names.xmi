@@ -16,9 +16,9 @@ For Eclipse:
          xmlns:uml="http://www.omg.org/spec/UML/20131001"
          xmlns:xmi="http://www.omg.org/spec/XMI/20131001">
    <uml:Model xmi:id="LibraryDomainModel"
-              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#LibraryDomainModel">
+              xmi:uuid="http://example.org/LIB/1.0/XMI/#LibraryDomainModel">
       <ownedComment xmi:id="LibraryDomainModel-ownedComment"
-                    xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#LibraryDomainModel-ownedComment"
+                    xmi:uuid="http://example.org/LIB/1.0/XMI/#LibraryDomainModel-ownedComment"
                     xmi:type="uml:Comment">
          <annotatedElement xmi:idref="LibraryDomainModel"/>
          <body>Library Domain Model
@@ -30,23 +30,23 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
       </ownedComment>
       <name>LibraryDomainModel</name>
       <packagedElement xmi:id="LibraryDomainModel-Classes"
-                       xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Classes"
+                       xmi:uuid="http://example.org/LIB/1.0/XMI/#Classes"
                        xmi:type="uml:Package">
          <ownedComment xmi:id="LibraryDomainModel-Classes-ownedComment"
-                       xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Classes-ownedComment"
+                       xmi:uuid="http://example.org/LIB/1.0/XMI/#Classes-ownedComment"
                        xmi:type="uml:Comment">
             <annotatedElement xmi:idref="LibraryDomainModel-Classes"/>
             <body>Package with all classes.</body>
          </ownedComment>
          <name>Classes</name>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Account_account_Patron"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account_account_Patron"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Account_account_Patron"
                           xmi:type="uml:Association">
             <name>Account_account_Patron</name>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Account-ownedAttribute_3"/>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Account_account_Patron-ownedEnd"/>
             <ownedEnd xmi:id="LibraryDomainModel-Classes-Account_account_Patron-ownedEnd"
-                      xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account_account_Patron-ownedEnd"
+                      xmi:uuid="http://example.org/LIB/1.0/XMI/#Account_account_Patron-ownedEnd"
                       xmi:type="uml:Property">
                <aggregation>shared</aggregation>
                <association xmi:idref="LibraryDomainModel-Classes-Account_account_Patron"/>
@@ -54,16 +54,16 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedEnd>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Account_accounts_Library"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account_accounts_Library"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Account_accounts_Library"
                           xmi:type="uml:Association">
             <name>Account_accounts_Library</name>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Account-ownedAttribute_1"/>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Account_accounts_Library-ownedEnd"/>
             <ownedEnd xmi:id="LibraryDomainModel-Classes-Account_accounts_Library-ownedEnd"
-                      xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account_accounts_Library-ownedEnd"
+                      xmi:uuid="http://example.org/LIB/1.0/XMI/#Account_accounts_Library-ownedEnd"
                       xmi:type="uml:Property">
                <upperValue xmi:id="LibraryDomainModel-Classes-Account_accounts_Library-ownedEnd-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account_accounts_Library-ownedEnd-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account_accounts_Library-ownedEnd-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>*</value>
                </upperValue>
@@ -73,34 +73,34 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedEnd>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Account_borrowed_BookItem"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account_borrowed_BookItem"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Account_borrowed_BookItem"
                           xmi:type="uml:Association">
             <name>Account_borrowed_BookItem</name>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Account-ownedAttribute_2"/>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Account_borrowed_BookItem-ownedEnd"/>
             <ownedEnd xmi:id="LibraryDomainModel-Classes-Account_borrowed_BookItem-ownedEnd"
-                      xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account_borrowed_BookItem-ownedEnd"
+                      xmi:uuid="http://example.org/LIB/1.0/XMI/#Account_borrowed_BookItem-ownedEnd"
                       xmi:type="uml:Property">
                <association xmi:idref="LibraryDomainModel-Classes-Account_borrowed_BookItem"/>
                <type xmi:idref="LibraryDomainModel-Classes-Account"/>
             </ownedEnd>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Author_wrote_Book"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author_wrote_Book"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Author_wrote_Book"
                           xmi:type="uml:Association">
             <name>Author_wrote_Book</name>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Author-ownedAttribute"/>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Author_wrote_Book-ownedEnd"/>
             <ownedEnd xmi:id="LibraryDomainModel-Classes-Author_wrote_Book-ownedEnd"
-                      xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author_wrote_Book-ownedEnd"
+                      xmi:uuid="http://example.org/LIB/1.0/XMI/#Author_wrote_Book-ownedEnd"
                       xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Author_wrote_Book-ownedEnd-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author_wrote_Book-ownedEnd-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Author_wrote_Book-ownedEnd-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Author_wrote_Book-ownedEnd-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author_wrote_Book-ownedEnd-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Author_wrote_Book-ownedEnd-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>*</value>
                </upperValue>
@@ -109,13 +109,13 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedEnd>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Catalog_catalogues_Library"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog_catalogues_Library"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog_catalogues_Library"
                           xmi:type="uml:Association">
             <name>Catalog_catalogues_Library</name>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Catalog-ownedAttribute_1"/>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Catalog_catalogues_Library-ownedEnd"/>
             <ownedEnd xmi:id="LibraryDomainModel-Classes-Catalog_catalogues_Library-ownedEnd"
-                      xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog_catalogues_Library-ownedEnd"
+                      xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog_catalogues_Library-ownedEnd"
                       xmi:type="uml:Property">
                <aggregation>shared</aggregation>
                <association xmi:idref="LibraryDomainModel-Classes-Catalog_catalogues_Library"/>
@@ -123,21 +123,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedEnd>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Catalog_records_BookItem"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog_records_BookItem"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog_records_BookItem"
                           xmi:type="uml:Association">
             <name>Catalog_records_BookItem</name>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Catalog-ownedAttribute_2"/>
             <memberEnd xmi:idref="LibraryDomainModel-Classes-Catalog_records_BookItem-ownedEnd"/>
             <ownedEnd xmi:id="LibraryDomainModel-Classes-Catalog_records_BookItem-ownedEnd"
-                      xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog_records_BookItem-ownedEnd"
+                      xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog_records_BookItem-ownedEnd"
                       xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Catalog_records_BookItem-ownedEnd-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog_records_BookItem-ownedEnd-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog_records_BookItem-ownedEnd-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Catalog_records_BookItem-ownedEnd-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog_records_BookItem-ownedEnd-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog_records_BookItem-ownedEnd-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -146,25 +146,25 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedEnd>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Account"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Account"
                           xmi:type="uml:Class">
             <ownedComment xmi:id="LibraryDomainModel-Classes-Account-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-Classes-Account"/>
                <body>Library user account.</body>
             </ownedComment>
             <name>Account</name>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Account-number"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-number"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-number"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Account-number-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-number-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-number-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Account-number-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-number-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-number-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -173,15 +173,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Account-openingDate"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-openingDate"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-openingDate"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Account-openingDate-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-openingDate-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-openingDate-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Account-openingDate-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-openingDate-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-openingDate-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -189,15 +189,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <type xmi:idref="LibraryDomainModel-DataTypes-StructuredDataTypes-Date"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Account-ownedAttribute_1"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-ownedAttribute_1"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-ownedAttribute_1"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Account-ownedAttribute_1-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-ownedAttribute_1-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-ownedAttribute_1-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Account-ownedAttribute_1-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-ownedAttribute_1-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-ownedAttribute_1-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -205,13 +205,13 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <type xmi:idref="LibraryDomainModel-Classes-Library"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Account-ownedAttribute_2"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-ownedAttribute_2"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-ownedAttribute_2"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Account-ownedAttribute_2-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-ownedAttribute_2-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-ownedAttribute_2-lowerValue"
                            xmi:type="uml:LiteralInteger"/>
                <upperValue xmi:id="LibraryDomainModel-Classes-Account-ownedAttribute_2-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-ownedAttribute_2-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-ownedAttribute_2-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>12</value>
                </upperValue>
@@ -219,21 +219,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <type xmi:idref="LibraryDomainModel-Classes-BookItem"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Account-ownedAttribute_3"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-ownedAttribute_3"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-ownedAttribute_3"
                             xmi:type="uml:Property">
                <association xmi:idref="LibraryDomainModel-Classes-Account_account_Patron"/>
                <type xmi:idref="LibraryDomainModel-Classes-Patron"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Account-state"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-state"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-state"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Account-state-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-state-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-state-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Account-state-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Account-state-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Account-state-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -242,25 +242,25 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedAttribute>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Author"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Author"
                           xmi:type="uml:Class">
             <ownedComment xmi:id="LibraryDomainModel-Classes-Author-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-Classes-Author"/>
                <body>Author of a book.</body>
             </ownedComment>
             <name>Author</name>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Author-birthYear"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-birthYear"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-birthYear"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Author-birthYear-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-birthYear-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-birthYear-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Author-birthYear-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-birthYear-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-birthYear-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -269,15 +269,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Author-name"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-name"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-name"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Author-name-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-name-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-name-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Author-name-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-name-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-name-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -286,15 +286,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <type xmi:idref="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Author-ownedAttribute"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-ownedAttribute"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-ownedAttribute"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Author-ownedAttribute-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-ownedAttribute-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-ownedAttribute-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Author-ownedAttribute-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Author-ownedAttribute-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Author-ownedAttribute-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>*</value>
                </upperValue>
@@ -303,29 +303,29 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedAttribute>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Book"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Book"
                           xmi:type="uml:Class">
             <ownedComment xmi:id="LibraryDomainModel-Classes-Book-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-Classes-Book"/>
                <body>Description of a book.</body>
             </ownedComment>
             <name>Book</name>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Book-isbn"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-isbn"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-isbn"
                             xmi:type="uml:Property">
                <ownedComment xmi:id="LibraryDomainModel-Classes-Book-isbn-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-isbn-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-isbn-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-Classes-Book-isbn"/>
                   <body>ISBN</body>
                </ownedComment>
                <lowerValue xmi:id="LibraryDomainModel-Classes-Book-isbn-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-isbn-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-isbn-lowerValue"
                            xmi:type="uml:LiteralInteger"/>
                <upperValue xmi:id="LibraryDomainModel-Classes-Book-isbn-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-isbn-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-isbn-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -335,15 +335,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Book-language"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-language"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-language"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Book-language-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-language-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-language-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Book-language-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-language-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-language-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -351,21 +351,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <type xmi:idref="LibraryDomainModel-DataTypes-Enumerations-Language"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Book-publicationYear"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-publicationYear"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-publicationYear"
                             xmi:type="uml:Property">
                <ownedComment xmi:id="LibraryDomainModel-Classes-Book-publicationYear-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-publicationYear-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-publicationYear-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-Classes-Book-publicationYear"/>
                   <body>Year of publication</body>
                </ownedComment>
                <lowerValue xmi:id="LibraryDomainModel-Classes-Book-publicationYear-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-publicationYear-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-publicationYear-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Book-publicationYear-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-publicationYear-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-publicationYear-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -374,15 +374,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Book-publisher"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-publisher"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-publisher"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Book-publisher-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-publisher-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-publisher-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Book-publisher-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-publisher-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-publisher-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -391,21 +391,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Book-subject"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-subject"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-subject"
                             xmi:type="uml:Property">
                <ownedComment xmi:id="LibraryDomainModel-Classes-Book-subject-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-subject-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-subject-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-Classes-Book-subject"/>
                   <body>Book subjects</body>
                </ownedComment>
                <lowerValue xmi:id="LibraryDomainModel-Classes-Book-subject-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-subject-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-subject-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Book-subject-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-subject-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-subject-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -414,21 +414,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Book-title"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-title"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-title"
                             xmi:type="uml:Property">
                <ownedComment xmi:id="LibraryDomainModel-Classes-Book-title-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-title-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-title-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-Classes-Book-title"/>
                   <body>Book title</body>
                </ownedComment>
                <lowerValue xmi:id="LibraryDomainModel-Classes-Book-title-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-title-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-title-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Book-title-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Book-title-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Book-title-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -438,28 +438,28 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedAttribute>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-BookItem"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem"
                           xmi:type="uml:Class">
             <ownedComment xmi:id="LibraryDomainModel-Classes-BookItem-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-Classes-BookItem"/>
                <body>Book item in the library.</body>
             </ownedComment>
             <name>BookItem</name>
             <generalization xmi:id="LibraryDomainModel-Classes-BookItem-generalization"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-generalization"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-generalization"
                             xmi:type="uml:Generalization">
                <general xmi:idref="LibraryDomainModel-Classes-Book"/>
             </generalization>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-BookItem-barcode"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-barcode"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-barcode"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-BookItem-barcode-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-barcode-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-barcode-lowerValue"
                            xmi:type="uml:LiteralInteger"/>
                <upperValue xmi:id="LibraryDomainModel-Classes-BookItem-barcode-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-barcode-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-barcode-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -469,15 +469,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-BookItem-borrowed"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-borrowed"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-borrowed"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-BookItem-borrowed-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-borrowed-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-borrowed-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-BookItem-borrowed-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-borrowed-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-borrowed-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -486,15 +486,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-BookItem-format"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-format"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-format"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-BookItem-format-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-format-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-format-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-BookItem-format-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#BookItem-format-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#BookItem-format-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -503,26 +503,26 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedAttribute>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Catalog"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog"
                           xmi:type="uml:Class">
             <ownedComment xmi:id="LibraryDomainModel-Classes-Catalog-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-Classes-Catalog"/>
                <body>Book item catalog.</body>
             </ownedComment>
             <name>Catalog</name>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Catalog-ownedAttribute_1"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog-ownedAttribute_1"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog-ownedAttribute_1"
                             xmi:type="uml:Property">
                <association xmi:idref="LibraryDomainModel-Classes-Catalog_catalogues_Library"/>
                <type xmi:idref="LibraryDomainModel-Classes-Library"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Catalog-ownedAttribute_2"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog-ownedAttribute_2"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog-ownedAttribute_2"
                             xmi:type="uml:Property">
                <upperValue xmi:id="LibraryDomainModel-Classes-Catalog-ownedAttribute_2-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Catalog-ownedAttribute_2-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Catalog-ownedAttribute_2-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>*</value>
                </upperValue>
@@ -531,25 +531,25 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedAttribute>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Library"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Library"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Library"
                           xmi:type="uml:Class">
             <ownedComment xmi:id="LibraryDomainModel-Classes-Library-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Library-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Library-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-Classes-Library"/>
                <body>Book library.</body>
             </ownedComment>
             <name>Library</name>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Library-address"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Library-address"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Library-address"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Library-address-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Library-address-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Library-address-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Library-address-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Library-address-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Library-address-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -557,15 +557,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <type xmi:idref="LibraryDomainModel-DataTypes-StructuredDataTypes-Address"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Library-name"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Library-name"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Library-name"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Library-name-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Library-name-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Library-name-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Library-name-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Library-name-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Library-name-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -575,25 +575,25 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedAttribute>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-Classes-Patron"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Patron"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Patron"
                           xmi:type="uml:Class">
             <ownedComment xmi:id="LibraryDomainModel-Classes-Patron-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Patron-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Patron-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-Classes-Patron"/>
                <body>Library user.</body>
             </ownedComment>
             <name>Patron</name>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Patron-address"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Patron-address"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Patron-address"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Patron-address-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Patron-address-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Patron-address-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Patron-address-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Patron-address-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Patron-address-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -601,15 +601,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <type xmi:idref="LibraryDomainModel-DataTypes-StructuredDataTypes-Address"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-Classes-Patron-name"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Patron-name"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#Patron-name"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-Classes-Patron-name-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Patron-name-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Patron-name-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-Classes-Patron-name-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Patron-name-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#Patron-name-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
@@ -619,41 +619,41 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
          </packagedElement>
       </packagedElement>
       <packagedElement xmi:id="LibraryDomainModel-DataTypes"
-                       xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#DataTypes"
+                       xmi:uuid="http://example.org/LIB/1.0/XMI/#DataTypes"
                        xmi:type="uml:Package">
          <ownedComment xmi:id="LibraryDomainModel-DataTypes-ownedComment"
-                       xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#DataTypes-ownedComment"
+                       xmi:uuid="http://example.org/LIB/1.0/XMI/#DataTypes-ownedComment"
                        xmi:type="uml:Comment">
             <annotatedElement xmi:idref="LibraryDomainModel-DataTypes"/>
             <body>Package with all data types.</body>
          </ownedComment>
          <name>DataTypes</name>
          <packagedElement xmi:id="LibraryDomainModel-DataTypes-ModelIdentification"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification"
                           xmi:type="uml:DataType">
             <ownedComment xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-DataTypes-ModelIdentification"/>
                <body>Attributes for the model identification with constant values.</body>
             </ownedComment>
             <name>ModelIdentification</name>
             <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-acronym"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-acronym"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-acronym"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-acronym-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-acronym-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-acronym-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-acronym-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-acronym-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-acronym-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
                <name>acronym</name>
                <defaultValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-acronym-defaultValue"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-acronym-defaultValue"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-acronym-defaultValue"
                              xmi:type="uml:LiteralString">
                   <value>LIB</value>
                </defaultValue>
@@ -662,21 +662,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-language"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-language"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-language"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-language-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-language-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-language-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-language-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-language-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-language-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
                <name>language</name>
                <defaultValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-language-defaultValue"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-language-defaultValue"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-language-defaultValue"
                              xmi:type="uml:LiteralString">
                   <value>en</value>
                </defaultValue>
@@ -685,21 +685,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-majorVersion"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-majorVersion"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-majorVersion"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-majorVersion-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-majorVersion-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-majorVersion-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-majorVersion-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-majorVersion-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-majorVersion-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
                <name>majorVersion</name>
                <defaultValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-majorVersion-defaultValue"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-majorVersion-defaultValue"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-majorVersion-defaultValue"
                              xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </defaultValue>
@@ -708,21 +708,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-minorVersion"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-minorVersion"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-minorVersion"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-minorVersion-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-minorVersion-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-minorVersion-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-minorVersion-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-minorVersion-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-minorVersion-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
                <name>minorVersion</name>
                <defaultValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-minorVersion-defaultValue"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-minorVersion-defaultValue"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-minorVersion-defaultValue"
                              xmi:type="uml:LiteralInteger">
                   <value>0</value>
                </defaultValue>
@@ -731,21 +731,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-title"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-title"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-title"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-title-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-title-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-title-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-title-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-title-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-title-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
                <name>title</name>
                <defaultValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-title-defaultValue"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-title-defaultValue"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-title-defaultValue"
                              xmi:type="uml:LiteralString">
                   <value>UCMIS Example: Library Domain Model</value>
                </defaultValue>
@@ -754,21 +754,21 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                      xmi:type="uml:PrimitiveType"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-uri"
-                            xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-uri"
+                            xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-uri"
                             xmi:type="uml:Property">
                <lowerValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-uri-lowerValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-uri-lowerValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-uri-lowerValue"
                            xmi:type="uml:LiteralInteger">
                   <value>1</value>
                </lowerValue>
                <upperValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-uri-upperValue"
-                           xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-uri-upperValue"
+                           xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-uri-upperValue"
                            xmi:type="uml:LiteralUnlimitedNatural">
                   <value>1</value>
                </upperValue>
                <name>uri</name>
                <defaultValue xmi:id="LibraryDomainModel-DataTypes-ModelIdentification-uri-defaultValue"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ModelIdentification-uri-defaultValue"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#ModelIdentification-uri-defaultValue"
                              xmi:type="uml:LiteralString">
                   <value>https://www.uml-diagrams.org/library-domain-uml-class-diagram-example.html</value>
                </defaultValue>
@@ -778,143 +778,143 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
             </ownedAttribute>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-DataTypes-Enumerations"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Enumerations"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#Enumerations"
                           xmi:type="uml:Package">
             <name>Enumerations</name>
             <packagedElement xmi:id="LibraryDomainModel-DataTypes-Enumerations-AccountState"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#AccountState"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#AccountState"
                              xmi:type="uml:Enumeration">
                <ownedComment xmi:id="LibraryDomainModel-DataTypes-Enumerations-AccountState-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#AccountState-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#AccountState-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-DataTypes-Enumerations-AccountState"/>
                   <body>State of a user account.</body>
                </ownedComment>
                <name>AccountState</name>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-AccountState-Active"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Active"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Active"
                              xmi:type="uml:EnumerationLiteral">
                   <name>Active</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-AccountState-Closed"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Closed"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Closed"
                              xmi:type="uml:EnumerationLiteral">
                   <name>Closed</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-AccountState-Frozen"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Frozen"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Frozen"
                              xmi:type="uml:EnumerationLiteral">
                   <name>Frozen</name>
                </ownedLiteral>
             </packagedElement>
             <packagedElement xmi:id="LibraryDomainModel-DataTypes-Enumerations-Format"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Format"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Format"
                              xmi:type="uml:Enumeration">
                <ownedComment xmi:id="LibraryDomainModel-DataTypes-Enumerations-Format-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Format-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Format-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-DataTypes-Enumerations-Format"/>
                   <body>Book item format.</body>
                </ownedComment>
                <name>Format</name>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Format-Audiobook"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Audiobook"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Audiobook"
                              xmi:type="uml:EnumerationLiteral">
                   <name>Audiobook</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Format-AudioCD"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#AudioCD"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#AudioCD"
                              xmi:type="uml:EnumerationLiteral">
                   <name>AudioCD</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Format-Hardcover"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Hardcover"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Hardcover"
                              xmi:type="uml:EnumerationLiteral">
                   <name>Hardcover</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Format-MP3CD"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#MP3CD"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#MP3CD"
                              xmi:type="uml:EnumerationLiteral">
                   <name>MP3CD</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Format-Paperback"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Paperback"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Paperback"
                              xmi:type="uml:EnumerationLiteral">
                   <name>Paperback</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Format-PDF"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#PDF"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#PDF"
                              xmi:type="uml:EnumerationLiteral">
                   <name>PDF</name>
                </ownedLiteral>
             </packagedElement>
             <packagedElement xmi:id="LibraryDomainModel-DataTypes-Enumerations-Language"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Language"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Language"
                              xmi:type="uml:Enumeration">
                <ownedComment xmi:id="LibraryDomainModel-DataTypes-Enumerations-Language-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Language-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Language-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-DataTypes-Enumerations-Language"/>
                   <body>Available languages.</body>
                </ownedComment>
                <name>Language</name>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Language-English"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#English"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#English"
                              xmi:type="uml:EnumerationLiteral">
                   <name>English</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Language-French"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#French"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#French"
                              xmi:type="uml:EnumerationLiteral">
                   <name>French</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Language-German"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#German"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#German"
                              xmi:type="uml:EnumerationLiteral">
                   <name>German</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Language-Italian"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Italian"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Italian"
                              xmi:type="uml:EnumerationLiteral">
                   <name>Italian</name>
                </ownedLiteral>
                <ownedLiteral xmi:id="LibraryDomainModel-DataTypes-Enumerations-Language-Spanish"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Spanish"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Spanish"
                              xmi:type="uml:EnumerationLiteral">
                   <name>Spanish</name>
                </ownedLiteral>
             </packagedElement>
          </packagedElement>
          <packagedElement xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#StructuredDataTypes"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#StructuredDataTypes"
                           xmi:type="uml:Package">
             <ownedComment xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-ownedComment"
-                          xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#StructuredDataTypes-ownedComment"
+                          xmi:uuid="http://example.org/LIB/1.0/XMI/#StructuredDataTypes-ownedComment"
                           xmi:type="uml:Comment">
                <annotatedElement xmi:idref="LibraryDomainModel-DataTypes-StructuredDataTypes"/>
                <body>Usual details of date.</body>
             </ownedComment>
             <name>StructuredDataTypes</name>
             <packagedElement xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Address"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Address"
                              xmi:type="uml:DataType">
                <ownedComment xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Address-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Address-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-DataTypes-StructuredDataTypes-Address"/>
                   <body>Generic address.</body>
                </ownedComment>
                <name>Address</name>
                <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-City"
-                               xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#City"
+                               xmi:uuid="http://example.org/LIB/1.0/XMI/#City"
                                xmi:type="uml:Property">
                   <lowerValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-City-lowerValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#City-lowerValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#City-lowerValue"
                               xmi:type="uml:LiteralInteger">
                      <value>1</value>
                   </lowerValue>
                   <upperValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-City-upperValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#City-upperValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#City-upperValue"
                               xmi:type="uml:LiteralUnlimitedNatural">
                      <value>1</value>
                   </upperValue>
@@ -923,15 +923,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                         xmi:type="uml:PrimitiveType"/>
                </ownedAttribute>
                <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-Country"
-                               xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Country"
+                               xmi:uuid="http://example.org/LIB/1.0/XMI/#Country"
                                xmi:type="uml:Property">
                   <lowerValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-Country-lowerValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Country-lowerValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#Country-lowerValue"
                               xmi:type="uml:LiteralInteger">
                      <value>1</value>
                   </lowerValue>
                   <upperValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-Country-upperValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Country-upperValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#Country-upperValue"
                               xmi:type="uml:LiteralUnlimitedNatural">
                      <value>1</value>
                   </upperValue>
@@ -940,15 +940,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                         xmi:type="uml:PrimitiveType"/>
                </ownedAttribute>
                <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-Street"
-                               xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Street"
+                               xmi:uuid="http://example.org/LIB/1.0/XMI/#Street"
                                xmi:type="uml:Property">
                   <lowerValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-Street-lowerValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Street-lowerValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#Street-lowerValue"
                               xmi:type="uml:LiteralInteger">
                      <value>1</value>
                   </lowerValue>
                   <upperValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-Street-upperValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Street-upperValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#Street-upperValue"
                               xmi:type="uml:LiteralUnlimitedNatural">
                      <value>1</value>
                   </upperValue>
@@ -957,15 +957,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                         xmi:type="uml:PrimitiveType"/>
                </ownedAttribute>
                <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-StreetNumber"
-                               xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#StreetNumber"
+                               xmi:uuid="http://example.org/LIB/1.0/XMI/#StreetNumber"
                                xmi:type="uml:Property">
                   <lowerValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-StreetNumber-lowerValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#StreetNumber-lowerValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#StreetNumber-lowerValue"
                               xmi:type="uml:LiteralInteger">
                      <value>1</value>
                   </lowerValue>
                   <upperValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-StreetNumber-upperValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#StreetNumber-upperValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#StreetNumber-upperValue"
                               xmi:type="uml:LiteralUnlimitedNatural">
                      <value>1</value>
                   </upperValue>
@@ -974,15 +974,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                         xmi:type="uml:PrimitiveType"/>
                </ownedAttribute>
                <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-ZIPCode"
-                               xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ZIPCode"
+                               xmi:uuid="http://example.org/LIB/1.0/XMI/#ZIPCode"
                                xmi:type="uml:Property">
                   <lowerValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-ZIPCode-lowerValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ZIPCode-lowerValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#ZIPCode-lowerValue"
                               xmi:type="uml:LiteralInteger">
                      <value>1</value>
                   </lowerValue>
                   <upperValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Address-ZIPCode-upperValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#ZIPCode-upperValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#ZIPCode-upperValue"
                               xmi:type="uml:LiteralUnlimitedNatural">
                      <value>1</value>
                   </upperValue>
@@ -992,10 +992,10 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                </ownedAttribute>
             </packagedElement>
             <packagedElement xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Date"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Date"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Date"
                              xmi:type="uml:DataType">
                <ownedComment xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-Date-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#Date-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#Date-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-DataTypes-StructuredDataTypes-Date"/>
                   <body>Usual date details.</body>
@@ -1003,25 +1003,25 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                <name>Date</name>
             </packagedElement>
             <packagedElement xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName"
                              xmi:type="uml:DataType">
                <ownedComment xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-ownedComment"
-                             xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-ownedComment"
+                             xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-ownedComment"
                              xmi:type="uml:Comment">
                   <annotatedElement xmi:idref="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName"/>
                   <body>Full name.</body>
                </ownedComment>
                <name>FullName</name>
                <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-firstName"
-                               xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-firstName"
+                               xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-firstName"
                                xmi:type="uml:Property">
                   <lowerValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-firstName-lowerValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-firstName-lowerValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-firstName-lowerValue"
                               xmi:type="uml:LiteralInteger">
                      <value>1</value>
                   </lowerValue>
                   <upperValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-firstName-upperValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-firstName-upperValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-firstName-upperValue"
                               xmi:type="uml:LiteralUnlimitedNatural">
                      <value>1</value>
                   </upperValue>
@@ -1030,15 +1030,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                         xmi:type="uml:PrimitiveType"/>
                </ownedAttribute>
                <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-lastName"
-                               xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-lastName"
+                               xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-lastName"
                                xmi:type="uml:Property">
                   <lowerValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-lastName-lowerValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-lastName-lowerValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-lastName-lowerValue"
                               xmi:type="uml:LiteralInteger">
                      <value>1</value>
                   </lowerValue>
                   <upperValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-lastName-upperValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-lastName-upperValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-lastName-upperValue"
                               xmi:type="uml:LiteralUnlimitedNatural">
                      <value>1</value>
                   </upperValue>
@@ -1047,15 +1047,15 @@ See: https://bitbucket.org/ddi-alliance/ucmis/</body>
                         xmi:type="uml:PrimitiveType"/>
                </ownedAttribute>
                <ownedAttribute xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-middleName"
-                               xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-middleName"
+                               xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-middleName"
                                xmi:type="uml:Property">
                   <lowerValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-middleName-lowerValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-middleName-lowerValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-middleName-lowerValue"
                               xmi:type="uml:LiteralInteger">
                      <value>1</value>
                   </lowerValue>
                   <upperValue xmi:id="LibraryDomainModel-DataTypes-StructuredDataTypes-FullName-middleName-upperValue"
-                              xmi:uuid="http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#FullName-middleName-upperValue"
+                              xmi:uuid="http://example.org/LIB/1.0/XMI/#FullName-middleName-upperValue"
                               xmi:type="uml:LiteralUnlimitedNatural">
                      <value>1</value>
                   </upperValue>

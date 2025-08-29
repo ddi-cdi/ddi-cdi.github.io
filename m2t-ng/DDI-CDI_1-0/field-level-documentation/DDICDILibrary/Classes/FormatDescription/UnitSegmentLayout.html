@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=85f2cbcf" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=90ec1f7c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/diagramModal.css?v=f32f5540" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -49,8 +49,8 @@
     <script src="../../../_static/jquery.js?v=5d32c60e"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../../../_static/custom.js?v=74962423"></script>
-    <script src="../../../_static/_modelInformation.js?v=0ab2af64"></script>
+    <script src="../../../_static/custom.js?v=630073b2"></script>
+    <script src="../../../_static/_modelInformation.js?v=72d40953"></script>
     <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'DDICDILibrary/Classes/FormatDescription/UnitSegmentLayout';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -886,8 +886,8 @@ for specific implementations, or for use as defaults if sufficient in the form p
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 Canonical XMI</label><div class="sd-tab-content encoding docutils">
 <p class="sd-card-text">Fragment for the class <strong>UnitSegmentLayout</strong> (<a class="reference external" href="/encoding/xmi/ddi-cdi_canonical-unique-names.xmi">entire model as XMI</a>)</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">&lt;packagedElement</span><span class="w"> </span><span class="na">xmlns:StandardProfile=</span><span class="s">&quot;http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard&quot;</span>
-<span class="linenos"> 2</span><span class="w">                  </span><span class="na">xmlns:uml=</span><span class="s">&quot;http://www.eclipse.org/uml2/5.0.0/UML&quot;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">&lt;packagedElement</span><span class="w"> </span><span class="na">xmlns:StandardProfile=</span><span class="s">&quot;http://www.omg.org/spec/UML/20131001/StandardProfile&quot;</span>
+<span class="linenos"> 2</span><span class="w">                  </span><span class="na">xmlns:uml=</span><span class="s">&quot;http://www.omg.org/spec/UML/20131001&quot;</span>
 <span class="linenos"> 3</span><span class="w">                  </span><span class="na">xmlns:xmi=</span><span class="s">&quot;http://www.omg.org/spec/XMI/20131001&quot;</span>
 <span class="hll"><span class="linenos"> 4</span><span class="w">                  </span><span class="na">xmi:id=</span><span class="s">&quot;DDICDIModels-DDICDILibrary-Classes-FormatDescription-UnitSegmentLayout&quot;</span>
 </span><span class="linenos"> 5</span><span class="w">                  </span><span class="na">xmi:uuid=</span><span class="s">&quot;http://ddialliance.org/Specification/DDI-CDI/1.0/XMI/#UnitSegmentLayout&quot;</span>
@@ -1233,7 +1233,7 @@ Ontology (Turtle)</label><div class="sd-tab-content encoding docutils">
 <span class="hll"><span class="linenos">3</span><span class="nn">cdi</span><span class="p">:</span><span class="nt">UnitSegmentLayout</span>
 </span><span class="linenos">4</span>  <span class="kt">a</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">Class</span><span class="p">,</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span><span class="p">,</span> <span class="nn">ucmis</span><span class="p">:</span><span class="nt">Class</span><span class="p">;</span>
 <span class="linenos">5</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;UnitSegmentLayout&quot;</span><span class="p">;</span>
-<span class="linenos">6</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Definition\n==========\nDescription of unit-record (\&quot;wide\&quot;) data sets, where each row in the data set provides the same group of values for variables all relating to a single unit.\n\nExamples\n========\nA simple spreadsheet. Commonly the first row of the table will contain variable names or descriptions.\n\nThe following CSV file has a rectangular layout and would import into a simple table in a spreadsheet::\n\n   PersonId,AgeYr,HeightCm\n   1,22,183,\n   2,45,175,\n\nExplanatory notes\n=================\nThis is the classic rectangular data table used by most statistical packages, with rows/cases/observations and columns/variables/measurements. Each cell (DataPoint) in the table is the intersection of a Unit (row) and an InstanceVariable. Each logical column will contain data relating to the values for a single variable.&quot;</span><span class="o">@</span><span class="ge">DDI-CDI</span><span class="p">;</span>
+<span class="linenos">6</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Definition\n==========\nDescription of unit-record (\&quot;wide\&quot;) data sets, where each row in the data set provides the same group of values for variables all relating to a single unit.\n\nExamples\n========\nA simple spreadsheet. Commonly the first row of the table will contain variable names or descriptions.\n\nThe following CSV file has a rectangular layout and would import into a simple table in a spreadsheet::\n\n   PersonId,AgeYr,HeightCm\n   1,22,183,\n   2,45,175,\n\nExplanatory notes\n=================\nThis is the classic rectangular data table used by most statistical packages, with rows/cases/observations and columns/variables/measurements. Each cell (DataPoint) in the table is the intersection of a Unit (row) and an InstanceVariable. Each logical column will contain data relating to the values for a single variable.&quot;</span><span class="o">@</span><span class="ge">en</span><span class="p">;</span>
 <span class="linenos">7</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">cdi</span><span class="p">:</span><span class="nt">PhysicalSegmentLayout</span><span class="p">;</span>
 <span class="linenos">8</span><span class="p">.</span>
 </pre></div>
@@ -1254,7 +1254,7 @@ JSON-LD</label><div class="sd-tab-content encoding docutils">
 <span class="linenos"> 9</span><span class="w">      </span><span class="nt">&quot; comment &quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tag:json-should-support-trailing-commas&quot;</span>
 <span class="linenos">10</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">11</span><span class="w">  </span><span class="p">],</span>
-<span class="linenos">12</span><span class="w">  </span><span class="nt">&quot;generatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This code was generated by the Eclipse Acceleo project UCMIS M2T on 2025-08-19 11:15:25.&quot;</span><span class="p">,</span>
+<span class="linenos">12</span><span class="w">  </span><span class="nt">&quot;generatedBy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This code was generated by the Eclipse Acceleo project UCMIS M2T on 2025-08-29 14:34:53.&quot;</span><span class="p">,</span>
 <span class="linenos">13</span><span class="w">  </span><span class="nt">&quot;basedOn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;based on the UML data type DDICDIModels::DDICDILibrary::Classes::FormatDescription::UnitSegmentLayout&quot;</span>
 <span class="linenos">14</span><span class="p">}</span>
 </pre></div>

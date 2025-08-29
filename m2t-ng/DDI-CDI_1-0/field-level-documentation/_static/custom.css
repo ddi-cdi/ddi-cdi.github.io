@@ -554,3 +554,22 @@ button.btn, button.page-link {
 		font-size: 0.7rem;
 	}
 }
+
+section#mapping-uml-to-encodings > section > h2 {
+	display: none
+}
+
+section#mapping-uml-to-encodings div.sd-card-title {
+	text-align: center;
+}
+
+section#mapping-uml-to-encodings div.sd-tab-set {
+	margin-bottom: 0;
+}
+
+section#mapping-uml-to-encodings label.sd-tab-label {
+	transform: rotate(-30deg);
+	font-size: 0.7rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}

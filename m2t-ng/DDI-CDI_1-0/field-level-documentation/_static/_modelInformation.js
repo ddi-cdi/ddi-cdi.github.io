@@ -288,7 +288,7 @@ var definition = {
 	"type": "The nature or genre of the resource. Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMI-TYPE]. To describe the file format, physical medium, or dimensions of the resource, use the property Format. (See DCMI Metadata Terms - https://www.dublincore.org/specif ...",
 	"tooltip.aggregation-kind": "A shared aggregation is a variant of the association relationship; aggregation is more specific than association. It is an association that represents a part-whole or part-of relationship. The composite aggregation relationship is a stronger form of aggregation where the aggregate controls the lifecycle of the elements it aggregates.",
 	"tooltip.association": "An association is a relationship between classes which is used to show that instances of classes could be linked to each other.",
-	"tooltip.attribute": "Attributes (of a class of data type) hold data that is relevant to the entire class, not just a single object. For example, in a Car class, the number of wheels (assuming all cars have the same number) could be a class attribute.",
+	"tooltip.attribute": "Attributes (of a class or data type) hold data that is relevant to the entire class, not just a single object. For example, in a Car class, the number of wheels (assuming all cars have the same number) could be a class attribute.",
 	"tooltip.canonical-xmi": "Canonical XMI constitutes a specific constrained format of XMI that supports interoperability between UML tools.",
 	"tooltip.class": "A class classifies a set of objects and specifies the features that characterize the structure and behavior of those objects.",
 	"tooltip.classifier": "Class or data type. ",
